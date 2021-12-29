@@ -72,7 +72,7 @@ const developmentConfig = {
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/,
+        test: /\.s?[ac]ss$/,
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
@@ -83,7 +83,7 @@ const productionConfig = {
   module: {
     rules: [
       {
-        test: /\.s[ac]ss$/,
+        test: /\.s?[ac]ss$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
