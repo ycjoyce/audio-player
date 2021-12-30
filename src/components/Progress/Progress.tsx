@@ -34,7 +34,11 @@ interface Props {
   onUpdate(position: number): void;
 }
 
-// 進度條
+/**
+ * 進度條
+ * @param param0
+ * @returns
+ */
 const Progress: FC<Props> = ({
   totalLength,
   currentPosition,

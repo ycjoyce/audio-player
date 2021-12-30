@@ -21,7 +21,11 @@ interface Props {
   onClick(toPlay: boolean): void;
 }
 
-// 播放按鈕
+/**
+ * 播放按鈕
+ * @param param0
+ * @returns
+ */
 const PlayButton: FC<Props> = ({
   playing,
   content = { toPlay: "播放", toPause: "暫停" },

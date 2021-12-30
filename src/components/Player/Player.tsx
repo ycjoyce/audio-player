@@ -5,6 +5,7 @@ import React, {
   SyntheticEvent,
   ReactNode,
   useEffect,
+  useCallback,
 } from "react";
 
 import usePrevious from "../../hooks/usePrevious";
@@ -58,68 +59,93 @@ interface Props {
   };
 }
 
-// 播放器
+/**
+ * 播放器
+ * @param param0
+ * @returns
+ */
 const Player: FC<Props> = ({
-  audioSrc = { name: "", artist: "", url: "" },
+  audioSrc = { name: "", artist: "", img: "", url: "" },
   startSec = 0,
   autoPlay = false,
   controls = {},
 }) => {
-  const { name, artist, url } = audioSrc;
-  const audioRef = useRef<HTMLAudioElement>(null);
+  const { name, artist, img, url } = audioSrc;
+  const prevName = usePrevious(name); // 上一次 render 時的音源名稱
+
+  const audioRef = useRef<HTMLAudioElement>(null); // audio 元素
+  const [audioCanPlay, setAudioCanPlay] = useState<boolean>(false);
   const [audioDuration, setAudioDuration] = useState<number>(0);
   const [audioCurrentTime, setAudioCurrentTime] = useState<number>(0);
   const [playing, setPlaying] = useState<boolean>(false);
+
   const [progressUpdated, setProgressUpdated] = useState<boolean>(false);
   const [sleepUpdated, setSleepUpdated] = useState<boolean>(false);
   const sleepTimer = useRef<null | NodeJS.Timeout>(null);
-  const prevName = usePrevious(name);
 
-  useEffect(() => {
-    // 判斷現在是否正在播放
+  /**
+   * 播放音訊
+   * @param audio
+   */
+  const play = (audio: HTMLAudioElement): void => {
+    audio.play();
+  };
+
+  /**
+   * 暫停音訊
+   * @param audio
+   */
+  const pause = (audio: HTMLAudioElement): void => {
+    audio.pause();
+  };
+
+  /**
+   * 切換播放/暫停
+   * @param toPlay 要播放或暫停
+   */
+  const togglePlay = useCallback((toPlay: boolean): void => {
     const audio = audioRef.current;
     if (!audio) {
       return;
     }
-    setPlaying(!(audio.paused || audio.ended));
-  });
-
-  useEffect(() => {
-    // 判斷自動播放
-    const audio = audioRef.current;
-    if (!audio) {
-      return;
-    }
-    audio[autoPlay ? "play" : "pause"]();
-  }, [autoPlay, audioRef]);
+    const action = toPlay ? play : pause;
+    action(audio);
+  }, []);
 
   /**
    * 初始化播放設定
-   * @param audio
    */
-  const initPlayingSettings = (audio: HTMLAudioElement): void => {
-    const copiedAudio = audio;
-    // 設定全長
-    setAudioDuration(copiedAudio.duration);
-    // 設定開始時間
-    copiedAudio.currentTime = startSec;
+  const initPlayingSettings = useCallback(
+    (audio: HTMLAudioElement): void => {
+      const copiedAudio = audio;
+      // 設定全長
+      setAudioDuration(copiedAudio.duration);
+      // 設定開始時間
+      copiedAudio.currentTime = startSec;
+    },
+    [startSec]
+  );
+
+  /**
+   * 處理音源載入完成
+   */
+  const handleAudioLoadedMetadata = (e: SyntheticEvent): void => {
+    const audio = e.target as HTMLAudioElement;
+    initPlayingSettings(audio);
   };
 
   /**
-   * 處理進度條更新
-   * @param position 進度條位置
+   * 處理音源canplay事件
    */
-  const handleProgressUpdate = (position: number): void => {
-    const audio = audioRef.current;
-    if (!audio) {
-      return;
-    }
-    audio.currentTime = position;
-    setProgressUpdated(false);
-    audio.onseeked = () => {
-      setProgressUpdated(true);
-    };
+  const handleAudioCanPlay = (): void => {
+    setAudioCanPlay(true);
   };
+
+  /**
+   * 處理音源播放
+   * @param e
+   */
+  const handleAudioPlay = (): void => {};
 
   /**
    * 處理音源播放時間更新
@@ -131,45 +157,25 @@ const Player: FC<Props> = ({
   };
 
   /**
-   * 處理音源載入完成
-   * @param e
-   */
-  const handleAudioLoadedMetadata = (e: SyntheticEvent): void => {
-    const audio = e.currentTarget as HTMLAudioElement;
-    initPlayingSettings(audio);
-    if (autoPlay) {
-      audio.play();
-    }
-  };
-
-  /**
-   * 處理音源播放
-   * @param e
-   */
-  const handleAudioPlay = (): void => {};
-
-  /**
    * 處理歌曲切換
    * @param direction
    */
-  const handleSongChange = (direction: keyof typeof Directions): void => {
-    const audio = audioRef.current;
-    if (controls.changeSong instanceof Function) {
-      controls.changeSong(direction);
-    }
-    if (!audio) {
-      return;
-    }
-    if (!autoPlay) {
-      // 切換到別首，如果沒有要自動播放，就先暫停
-      audio.pause();
-    }
-    if (prevName === name && autoPlay) {
-      // 如果是同一首且要自動播放，因為不會觸發loadmetadata，所以要另外處理
-      audio.play();
-    }
-    initPlayingSettings(audio);
-  };
+  const handleSongChange = useCallback(
+    (direction: keyof typeof Directions): void => {
+      const audio = audioRef.current;
+      if (!audio) {
+        return;
+      }
+      setAudioCanPlay(false);
+      if (controls.changeSong instanceof Function) {
+        controls.changeSong(direction);
+      }
+      if (prevName === name) {
+        initPlayingSettings(audio);
+      }
+    },
+    [controls, name, prevName, initPlayingSettings]
+  );
 
   /**
    * 處理音源暫停/結束
@@ -187,15 +193,19 @@ const Player: FC<Props> = ({
   };
 
   /**
-   * 切換播放/暫停
-   * @param toPlay 要播放或暫停
+   * 處理進度條更新
+   * @param position 進度條位置
    */
-  const togglePlay = (toPlay: boolean): void => {
+  const handleProgressUpdate = (position: number): void => {
     const audio = audioRef.current;
     if (!audio) {
       return;
     }
-    audio[toPlay ? "play" : "pause"]();
+    audio.currentTime = position;
+    setProgressUpdated(false);
+    audio.onseeked = () => {
+      setProgressUpdated(true);
+    };
   };
 
   /**
@@ -254,13 +264,23 @@ const Player: FC<Props> = ({
     }, minutes * 60 * 1000);
   };
 
+  useEffect(() => {
+    // 判斷自動播放
+    togglePlay(autoPlay && audioCanPlay);
+  }, [audioCanPlay, autoPlay, togglePlay]);
+
+  useEffect(() => {
+    // 判斷是否正在播放
+    const audio = audioRef.current;
+    if (!audio) return;
+    setPlaying(!audio.paused);
+  });
+
   return (
     <div data-testid="player">
       <PlayerSection>
-        <TrackTitle name={name} artist={artist} />
+        <TrackTitle name={name} artist={artist} img={img} />
       </PlayerSection>
-
-      {(name || artist) && <hr />}
 
       <Audio
         ref={audioRef}
@@ -270,6 +290,7 @@ const Player: FC<Props> = ({
         onPlay={handleAudioPlay}
         onPause={() => handleAudioStop(false)}
         onEnded={() => handleAudioStop(true)}
+        onCanPlay={handleAudioCanPlay}
       />
 
       <PlayerSection disabled={!url}>

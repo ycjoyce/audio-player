@@ -14,13 +14,16 @@ describe("Player", () => {
     .spyOn(window.HTMLMediaElement.prototype, "play")
     .mockImplementation(() => Promise.resolve());
 
+  jest
+    .spyOn(window.HTMLMediaElement.prototype, "pause")
+    .mockImplementation(() => Promise.resolve());
+
   it("should render a Player component", () => {
     const { rerender } = render(<Player audioSrc={audioSrc} />);
 
     expect(screen.getAllByRole("heading")).toHaveLength(2);
     expect(screen.getByText(audioSrc.name)).toBeInTheDocument();
     expect(screen.getByText(audioSrc.artist)).toBeInTheDocument();
-    expect(screen.getByRole("separator")).toBeInTheDocument();
 
     const audio = screen.getByTestId<HTMLAudioElement>("audio");
     expect(audio).toBeInTheDocument();

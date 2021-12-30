@@ -6,6 +6,7 @@ import fontSizes from "../abstract/font";
 import spacing from "../abstract/spacing";
 
 import Button from "./Button";
+import { ShadowBox } from "./Box";
 
 const buttonGroupParts = 4;
 
@@ -64,4 +65,13 @@ export const PlayerSection = styled.div<{ disabled?: boolean }>`
         z-index: 2;
       }
     `}
+`;
+
+/**
+ * 播放器的容器
+ */
+export const PlayerBox = styled(ShadowBox)`
+  width: 800px;
+  max-width: 90%;
+  margin: 0 auto;
 `;

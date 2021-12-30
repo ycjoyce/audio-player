@@ -11,7 +11,11 @@ import React, {
 
 import { FullWidthBox as StyledFullWidthBox } from "../../styled-components/components/Box";
 
-// 寬度 100% 的容器
+/**
+ * 寬度 100% 的容器
+ * @param param0
+ * @returns
+ */
 const FullWidthBox: FC = ({ children }) => {
   const boxRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState<number>(0);

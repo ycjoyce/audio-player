@@ -20,7 +20,11 @@ interface Props {
   setCheckedOption: Dispatch<SetStateAction<number>>;
 }
 
-// 設定睡眠模式的列表
+/**
+ * 設定睡眠模式的列表
+ * @param param0 
+ * @returns 
+ */
 const SleepList: FC<Props> = ({ options, checkedOption, setCheckedOption }) => {
   /**
    * 處理選項的點擊事件

@@ -30,9 +30,12 @@ interface Props {
    * @param e
    */
   onTimeUpdate?(e: SyntheticEvent): void;
+  onCanPlay?(e: SyntheticEvent): void;
 }
 
-// 音訊
+/**
+ * 音訊
+ */
 const Audio = forwardRef(
   (
     {
@@ -42,6 +45,7 @@ const Audio = forwardRef(
       onPause = () => {},
       onEnded = () => {},
       onTimeUpdate = () => {},
+      onCanPlay = () => {},
     }: Props,
     ref: Ref<HTMLAudioElement>
   ) => (
@@ -54,6 +58,7 @@ const Audio = forwardRef(
       onPause={onPause}
       onEnded={onEnded}
       onTimeUpdate={onTimeUpdate}
+      onCanPlay={onCanPlay}
     />
   )
 );

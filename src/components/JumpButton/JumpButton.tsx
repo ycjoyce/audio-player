@@ -21,7 +21,11 @@ interface Props {
   onJump(direction: keyof typeof Directions, gap: number): void;
 }
 
-// 播放器跳到前後秒數的按鈕
+/**
+ * 播放器跳到前後秒數的按鈕
+ * @param param0
+ * @returns
+ */
 const JumpButton: FC<Props> = ({ direction, gap, children, onJump }) => (
   <Button
     title={`跳至${gap}秒${direction === Directions.prev ? "前" : "後"}`}

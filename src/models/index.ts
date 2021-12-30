@@ -8,7 +8,12 @@ export type sleepOption = { text: string; minutes: number };
  * 音源資料
  * name: 曲目名稱 / artist: 藝術家 / url: 音源網址
  */
-export type audioSrc = { name?: string; artist?: string; url: string };
+export type audioSrc = {
+  name?: string;
+  artist?: string;
+  img?: string;
+  url: string;
+};
 
 /**
  * 方向（前/後)

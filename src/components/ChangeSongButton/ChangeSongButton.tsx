@@ -16,7 +16,11 @@ interface Props {
   onChange(direction: keyof typeof Directions): void;
 }
 
-// 切換上下首歌曲的按鈕
+/**
+ * 切換上下首歌曲的按鈕
+ * @param param0
+ * @returns
+ */
 const ChangeSongButton: FC<Props> = ({ direction, children, onChange }) => (
   <Button
     title={`切至${direction === Directions.prev ? "上" : "下"}一首`}

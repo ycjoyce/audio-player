@@ -24,13 +24,17 @@ interface Props {
   onUpdate(minutes: number): void;
 }
 
-// 設定睡眠模式
+/**
+ * 設定睡眠模式
+ * @param param0
+ * @returns
+ */
 const SleepGroup: FC<Props> = ({ options, updated, children, onUpdate }) => {
-  const [showList, setShowList] = useState<boolean>(false);
+  const [showList, setShowList] = useState<boolean>(false); // 是否打開選項列表
   const [checkedOption, setCheckedOption] = useState<number>(
     options[0].minutes
-  );
-  const prevCheckedOption = usePrevious(checkedOption);
+  ); // 目前被選中的選項
+  const prevCheckedOption = usePrevious(checkedOption); // 上一次 render 時被選中的選項
   const sleepGroupRef = useRef<HTMLDivElement>(null);
 
   /**

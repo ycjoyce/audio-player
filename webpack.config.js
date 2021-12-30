@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { merge } = require("webpack-merge");
+const DotEnv = require("dotenv-webpack");
 
 const commonConfig = {
   entry: {
@@ -55,6 +56,7 @@ const commonConfig = {
       filename: "index.html",
       template: "./public/index.html",
     }),
+    new DotEnv(),
   ],
   optimization: {
     splitChunks: {
