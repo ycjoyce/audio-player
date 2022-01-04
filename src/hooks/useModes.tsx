@@ -2,21 +2,13 @@ import React, {
   useMemo,
   useState,
   useEffect,
-  ReactNode,
   Dispatch,
   SetStateAction,
 } from "react";
 
 import usePrevious from "./usePrevious";
-import { audioSrc } from "../models";
+import { audioSrc, Mode } from "../models";
 import shuffleArray from "../utils/shuffleArray";
-
-interface Mode {
-  title?: string;
-  content: ReactNode;
-  repeat: boolean;
-  trackIndexes: number[];
-}
 
 /**
  * 播放模式相關操作

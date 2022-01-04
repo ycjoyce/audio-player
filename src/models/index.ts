@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 /**
  * 睡眠模式選項
  * text: 顯示文字 / minutes: 幾分鐘後暫停
@@ -48,4 +50,14 @@ export enum ThemeColors {
 export enum ButtonStyles {
   solid = "solid",
   outline = "outline",
+}
+
+/**
+ * 播放模式
+ */
+export interface Mode {
+  title?: string;
+  content: ReactNode;
+  repeat: boolean;
+  trackIndexes: number[];
 }

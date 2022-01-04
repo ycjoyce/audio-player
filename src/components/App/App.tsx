@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 
 import useTracks from "../../hooks/useTracks";
-import useModes from "../../hooks/useModes";
 import { Directions } from "../../models";
 import { getTopTracks, getAlbumData } from "../../apis";
 
@@ -14,19 +13,17 @@ import Player from "../Player/Player";
  * @returns
  */
 const App: FC = () => {
-  // 播放器是否自動播放
-  const [autoPlay, setAutoPlay] = useState<boolean>(true);
-
-  // 曲目列表
+  // 曲目列表、播放模式列表
   const {
+    autoPlay,
     tracks,
     currentTrackIndex,
+    mode,
+    setAutoPlay,
     setTracks,
     setCurrentTrackIndex,
+    handleChangeMode,
   } = useTracks();
-
-  // 播放模式列表
-  const { mode, handleChangeMode } = useModes(currentTrackIndex, tracks);
 
   /**
    * 處理曲目切換
