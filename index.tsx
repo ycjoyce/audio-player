@@ -1,18 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { ThemeProvider } from "styled-components";
-import "normalize.css";
-import "./node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+import Player from "./src/components/Player/Player";
+import tracksHook from "./src/hooks/useTracks";
+import modesHook from "./src/hooks/useModes";
 
-import theme from "./src/styled-components/abstract/theme";
-import { GlobalStyle } from "./src/styled-components/components/Global";
+const renderApp = async (): Promise<any> => {
+  const React = await import("react");
+  const { render } = await import("react-dom");
+  const { default: App } = await import("./src/components/App/App");
+  render(<App />, document.querySelector("#root"));
+};
 
-import App from "./src/components/App/App";
+if (process.env.NODE_ENV === "development") {
+  renderApp();
+}
 
-ReactDOM.render(
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <App />
-  </ThemeProvider>,
-  document.querySelector("#root")
-);
+export default Player;
+export const useTracks = tracksHook;
+export const useModes = modesHook;

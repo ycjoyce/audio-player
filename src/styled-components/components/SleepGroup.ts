@@ -26,4 +26,5 @@ export const StyledSleepList = styled(List)`
   border: 1px solid ${theme[ThemeColors.secondary]};
   font-size: ${fontSizes.small}em;
   text-align: center;
+  background-color: ${theme[ThemeColors.white]};
 `;

@@ -7,6 +7,9 @@ import React, {
   useEffect,
   useCallback,
 } from "react";
+import { ThemeProvider } from "styled-components";
+import "normalize.css";
+import "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
 import usePrevious from "../../hooks/usePrevious";
 import {
@@ -29,8 +32,10 @@ import {
   PlayerButtons,
   PlayerSection,
 } from "../../styled-components/components/Player";
+import theme from "../../styled-components/abstract/theme";
+import { GlobalStyle } from "../../styled-components/components/Global";
 
-interface Props {
+export interface Props {
   /**
    * 音訊來源
    */
@@ -277,104 +282,107 @@ const Player: FC<Props> = ({
   });
 
   return (
-    <div data-testid="player">
-      <PlayerSection>
-        <TrackTitle name={name} artist={artist} img={img} />
-      </PlayerSection>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div data-testid="player">
+        <PlayerSection>
+          <TrackTitle name={name} artist={artist} img={img} />
+        </PlayerSection>
 
-      <Audio
-        ref={audioRef}
-        src={url}
-        onLoadedMetadata={handleAudioLoadedMetadata}
-        onTimeUpdate={handleAudioTimeUpdate}
-        onPlay={handleAudioPlay}
-        onPause={() => handleAudioStop(false)}
-        onEnded={() => handleAudioStop(true)}
-        onCanPlay={handleAudioCanPlay}
-      />
-
-      <PlayerSection disabled={!url}>
-        <Progress
-          totalLength={audioDuration}
-          currentPosition={audioCurrentTime}
-          text={TextFormats.time}
-          updated={progressUpdated}
-          onUpdate={handleProgressUpdate}
+        <Audio
+          ref={audioRef}
+          src={url}
+          onLoadedMetadata={handleAudioLoadedMetadata}
+          onTimeUpdate={handleAudioTimeUpdate}
+          onPlay={handleAudioPlay}
+          onPause={() => handleAudioStop(false)}
+          onEnded={() => handleAudioStop(true)}
+          onCanPlay={handleAudioCanPlay}
         />
 
-        <PlayerButtonGroup>
-          <PlayerButtons level="main">
-            {controls.jumpGap && (
-              <JumpButton
-                direction={Directions.prev}
-                gap={controls.jumpGap || 0}
-                onJump={handleJump}
-              >
-                <i className="fas fa-undo-alt" />
-              </JumpButton>
-            )}
+        <PlayerSection disabled={!url}>
+          <Progress
+            totalLength={audioDuration}
+            currentPosition={audioCurrentTime}
+            text={TextFormats.time}
+            updated={progressUpdated}
+            onUpdate={handleProgressUpdate}
+          />
 
-            {controls.changeSong && (
-              <ChangeSongButton
-                direction={Directions.prev}
-                onChange={handleSongChange}
-              >
-                <i className="fas fa-backward" />
-              </ChangeSongButton>
-            )}
+          <PlayerButtonGroup>
+            <PlayerButtons level="main">
+              {controls.jumpGap && (
+                <JumpButton
+                  direction={Directions.prev}
+                  gap={controls.jumpGap || 0}
+                  onJump={handleJump}
+                >
+                  <i className="fas fa-undo-alt" />
+                </JumpButton>
+              )}
 
-            <PlayButton
-              playing={playing}
-              content={{
-                toPlay: <i className="far fa-play-circle" />,
-                toPause: <i className="far fa-pause-circle" />,
-              }}
-              onClick={togglePlay}
-            />
+              {controls.changeSong && (
+                <ChangeSongButton
+                  direction={Directions.prev}
+                  onChange={handleSongChange}
+                >
+                  <i className="fas fa-backward" />
+                </ChangeSongButton>
+              )}
 
-            {controls.changeSong && (
-              <ChangeSongButton
-                direction={Directions.next}
-                onChange={handleSongChange}
-              >
-                <i className="fas fa-forward" />
-              </ChangeSongButton>
-            )}
-
-            {controls.jumpGap && (
-              <JumpButton
-                direction={Directions.next}
-                gap={controls.jumpGap || 0}
-                onJump={handleJump}
-              >
-                <i className="fas fa-redo-alt" />
-              </JumpButton>
-            )}
-          </PlayerButtons>
-
-          <PlayerButtons level="sub">
-            {controls.changeMode}
-
-            {controls.changeRates && (
-              <RateButton
-                rates={controls.changeRates}
-                onUpdate={handleRateChange}
+              <PlayButton
+                playing={playing}
+                content={{
+                  toPlay: <i className="far fa-play-circle" />,
+                  toPause: <i className="far fa-pause-circle" />,
+                }}
+                onClick={togglePlay}
               />
-            )}
 
-            {controls.sleep && (
-              <SleepGroup
-                options={controls.sleep}
-                updated={sleepUpdated}
-                onUpdate={handleSleepChange}
-              >
-                <i className="fas fa-hourglass-half" />
-              </SleepGroup>
-            )}
-          </PlayerButtons>
-        </PlayerButtonGroup>
-      </PlayerSection>
-    </div>
+              {controls.changeSong && (
+                <ChangeSongButton
+                  direction={Directions.next}
+                  onChange={handleSongChange}
+                >
+                  <i className="fas fa-forward" />
+                </ChangeSongButton>
+              )}
+
+              {controls.jumpGap && (
+                <JumpButton
+                  direction={Directions.next}
+                  gap={controls.jumpGap || 0}
+                  onJump={handleJump}
+                >
+                  <i className="fas fa-redo-alt" />
+                </JumpButton>
+              )}
+            </PlayerButtons>
+
+            <PlayerButtons level="sub">
+              {controls.changeMode}
+
+              {controls.changeRates && (
+                <RateButton
+                  rates={controls.changeRates}
+                  onUpdate={handleRateChange}
+                />
+              )}
+
+              {controls.sleep && (
+                <SleepGroup
+                  options={controls.sleep}
+                  updated={sleepUpdated}
+                  onUpdate={handleSleepChange}
+                >
+                  <i className="fas fa-hourglass-half" />
+                </SleepGroup>
+              )}
+            </PlayerButtons>
+          </PlayerButtonGroup>
+        </PlayerSection>
+      </div>
+    </ThemeProvider>
   );
 };
 
