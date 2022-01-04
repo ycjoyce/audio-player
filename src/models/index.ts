@@ -17,25 +17,19 @@ export type audioSrc = {
   url: string;
 };
 
-/**
- * 方向（前/後)
- */
+/** 方向（前/後) */
 export enum Directions {
   prev = "prev",
   next = "next",
 }
 
-/**
- * 文字格式
- */
+/** 文字格式 */
 export enum TextFormats {
   time = "time",
   original = "original",
 }
 
-/**
- * 色系
- */
+/** 色系 */
 export enum ThemeColors {
   primary = "primary",
   secondary = "secondary",
@@ -44,17 +38,13 @@ export enum ThemeColors {
   dark = "dark",
 }
 
-/**
- * 按鈕樣式
- */
+/** 按鈕樣式 */
 export enum ButtonStyles {
   solid = "solid",
   outline = "outline",
 }
 
-/**
- * 播放模式
- */
+/** 播放模式 */
 export interface Mode {
   title?: string;
   content: ReactNode;

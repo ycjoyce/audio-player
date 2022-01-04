@@ -7,12 +7,17 @@ import React, { RefObject, useEffect } from "react";
  */
 function useClickOutside(ref: RefObject<any>, cb: () => void = () => {}): void {
   useEffect(() => {
-    // 如果點擊目標物外部，就執行 callback 函數
-    function handleClickOutside(this: Document, e: MouseEvent): any {
+    /**
+     * 處理外部點擊事件
+     * @param e
+     */
+    const handleClickOutside = (e: MouseEvent): void => {
+      // 如果點擊目標物外部，就執行 callback 函數
       if (ref.current && !ref.current.contains(e.target)) {
         cb();
       }
-    }
+    };
+
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {

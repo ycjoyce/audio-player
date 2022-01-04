@@ -6,17 +6,11 @@ import { ListItem } from "../../styled-components/components/List";
 import { StyledSleepList } from "../../styled-components/components/SleepGroup";
 
 interface Props {
-  /**
-   * 睡眠模式的選項
-   */
+  /** 睡眠模式的選項 */
   options: sleepOption[];
-  /**
-   * 被選到的選項
-   */
+  /** 被選到的選項 */
   checkedOption: number;
-  /**
-   * 選擇選項的方法
-   */
+  /** 選擇選項的方法 */
   setCheckedOption: Dispatch<SetStateAction<number>>;
 }
 

@@ -1,8 +1,6 @@
 type headings = { [level: number]: number };
 
-/**
- * 標題文字的尺寸
- */
+/** 標題文字的尺寸 */
 const headingSizes: headings = {
   1: 2.2,
   2: 2,
@@ -12,9 +10,7 @@ const headingSizes: headings = {
   6: 1,
 };
 
-/**
- * 文字尺寸
- */
+/** 文字尺寸 */
 const fontSizes: {
   headings: headings;
   normal: number;

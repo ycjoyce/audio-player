@@ -21,12 +21,13 @@ const FullWidthBox: FC = ({ children }) => {
   const [width, setWidth] = useState<number>(0);
 
   useEffect(() => {
-    // 初始化及螢幕大小改變時，重新取得寬度
+    /** 初始化及螢幕大小改變時，重新取得寬度 */
     const resetWidth = (): void => {
       if (boxRef.current) {
         setWidth(boxRef.current.clientWidth);
       }
     };
+
     resetWidth();
     window.addEventListener("resize", resetWidth);
 

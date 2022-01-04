@@ -5,13 +5,9 @@ import { Directions } from "../../models";
 import Button from "../../styled-components/components/Button";
 
 interface Props {
-  /**
-   * 要跳到哪個方向（前或後）
-   */
+  /**  要跳到哪個方向（前或後） */
   direction: keyof typeof Directions;
-  /**
-   * 要跳到相隔秒數幾秒的地方
-   */
+  /** 要跳到相隔秒數幾秒的地方 */
   gap: number;
   /**
    * 處理跳轉的方法

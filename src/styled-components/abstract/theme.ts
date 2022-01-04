@@ -1,8 +1,6 @@
 import { ThemeColors } from "../../models";
 
-/**
- * 色系
- */
+/** 色系 */
 const theme: { [themeColor in keyof typeof ThemeColors]: string } = {
   [ThemeColors.primary]: "pink",
   [ThemeColors.secondary]: "#ccc",

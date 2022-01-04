@@ -27,11 +27,11 @@ function useModes(
   setCurrentModeIndex: Dispatch<SetStateAction<number>>;
   handleChangeMode(): void;
 } {
-  // 現在播放模式索引
+  /** 現在播放模式索引 */
   const [currentModeIndex, setCurrentModeIndex] = useState<number>(0);
-  // 上一次 render 時的播放模式索引
+  /** 上一次 render 時的播放模式索引 */
   const prevModeIndex = usePrevious(currentModeIndex);
-  // 播放模式改變時的曲目索引
+  /** 播放模式改變時的曲目索引 */
   const [trackIdxWhenModeChanged, setTrackIdxWhenModeChanged] = useState<
     number
   >(0);
@@ -43,7 +43,7 @@ function useModes(
     }
   }, [currentModeIndex, prevModeIndex, currentTrackIndex]);
 
-  // 播放模式
+  /** 播放模式 */
   const modes: Mode[] = useMemo(
     () => [
       {
@@ -79,9 +79,7 @@ function useModes(
     [trackIdxWhenModeChanged, tracks]
   );
 
-  /**
-   * 處理播放模式改變
-   */
+  /** 處理播放模式改變 */
   const handleChangeMode = (): void => {
     setCurrentModeIndex(idx => (idx + 1 > modes.length - 1 ? 0 : idx + 1));
   };

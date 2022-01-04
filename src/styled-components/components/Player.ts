@@ -10,9 +10,7 @@ import { ShadowBox } from "./Box";
 
 const buttonGroupParts = 4;
 
-/**
- * 播放器的按鈕列
- */
+/** 播放器的按鈕列 */
 export const PlayerButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
@@ -28,9 +26,7 @@ export const PlayerButtonGroup = styled.div`
   }
 `;
 
-/**
- * 播放器的按鈕群組
- */
+/** 播放器的按鈕群組 */
 export const PlayerButtons = styled.div<{ level: "main" | "sub" }>`
   ${({ level }) =>
     level === "main"
@@ -45,9 +41,7 @@ export const PlayerButtons = styled.div<{ level: "main" | "sub" }>`
         `}
 `;
 
-/**
- * 播放器裡的各個區段
- */
+/** 播放器裡的各個區段 */
 export const PlayerSection = styled.div<{ disabled?: boolean }>`
   padding: ${spacing[4]}em;
 
@@ -67,9 +61,7 @@ export const PlayerSection = styled.div<{ disabled?: boolean }>`
     `}
 `;
 
-/**
- * 播放器的容器
- */
+/** 播放器的容器 */
 export const PlayerBox = styled(ShadowBox)`
   width: 800px;
   max-width: 90%;

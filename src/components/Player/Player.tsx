@@ -36,17 +36,11 @@ import theme from "../../styled-components/abstract/theme";
 import { GlobalStyle } from "../../styled-components/components/Global";
 
 export interface Props {
-  /**
-   * 音訊來源
-   */
+  /** 音訊來源 */
   audioSrc?: audioSrcType;
-  /**
-   * 要從哪個位置開始播（單位：秒）
-   */
+  /** 要從哪個位置開始播（單位：秒） */
   startSec?: number;
-  /**
-   * 是否自動開始播放
-   */
+  /** 是否自動開始播放 */
   autoPlay?: boolean;
   /**
    *  要顯示哪些控制功能
@@ -76,9 +70,11 @@ const Player: FC<Props> = ({
   controls = {},
 }) => {
   const { name, artist, img, url } = audioSrc;
-  const prevName = usePrevious(name); // 上一次 render 時的音源名稱
+  /** 上一次 render 時的音源名稱 */
+  const prevName = usePrevious(name);
 
-  const audioRef = useRef<HTMLAudioElement>(null); // audio 元素
+  /** audio 元素 */
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [audioCanPlay, setAudioCanPlay] = useState<boolean>(false);
   const [audioDuration, setAudioDuration] = useState<number>(0);
   const [audioCurrentTime, setAudioCurrentTime] = useState<number>(0);

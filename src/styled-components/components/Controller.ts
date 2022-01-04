@@ -20,9 +20,7 @@ function getProgress(
   return val;
 }
 
-/**
- * type 為 range 的 input
- */
+/** type 為 range 的 input */
 export const InputRange = styled.input.attrs(
   ({ width = 200 }: { width?: number }) => ({
     type: "range",

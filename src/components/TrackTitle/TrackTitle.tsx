@@ -7,17 +7,11 @@ import {
 } from "../../styled-components/components/TrackTitle";
 
 interface Props {
-  /**
-   * 曲目名稱
-   */
+  /** 曲目名稱 */
   name?: string;
-  /**
-   * 曲目藝術家
-   */
+  /** 曲目藝術家 */
   artist?: string;
-  /**
-   * 專輯圖片
-   */
+  /** 專輯圖片 */
   img?: string;
 }
 

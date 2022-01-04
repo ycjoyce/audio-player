@@ -5,9 +5,7 @@ import { Directions } from "../../models";
 import Button from "../../styled-components/components/Button";
 
 interface Props {
-  /**
-   * 要切到上首或下首
-   */
+  /** 要切到上首或下首 */
   direction: keyof typeof Directions;
   /**
    * 切換曲目的方法
@@ -18,7 +16,7 @@ interface Props {
 
 /**
  * 切換上下首歌曲的按鈕
- * @param param0
+ * @param params0
  * @returns
  */
 const ChangeSongButton: FC<Props> = ({ direction, children, onChange }) => (

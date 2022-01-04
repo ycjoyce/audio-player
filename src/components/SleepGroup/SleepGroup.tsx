@@ -9,13 +9,9 @@ import { StyledSleepGroup } from "../../styled-components/components/SleepGroup"
 import SleepList from "../SleepList/SleepList";
 
 interface Props {
-  /**
-   * 睡眠模式的選項
-   */
+  /** 睡眠模式的選項 */
   options: sleepOption[];
-  /**
-   * 是否已經更新完成
-   */
+  /** 是否已經更新完成 */
   updated?: boolean;
   /**
    * 更新睡眠模式的事件處理
@@ -30,11 +26,14 @@ interface Props {
  * @returns
  */
 const SleepGroup: FC<Props> = ({ options, updated, children, onUpdate }) => {
-  const [showList, setShowList] = useState<boolean>(false); // 是否打開選項列表
+  /** 是否打開選項列表 */
+  const [showList, setShowList] = useState<boolean>(false);
+  /** 目前備選中的選項 */
   const [checkedOption, setCheckedOption] = useState<number>(
     options[0].minutes
-  ); // 目前被選中的選項
-  const prevCheckedOption = usePrevious(checkedOption); // 上一次 render 時被選中的選項
+  );
+  /** 上一次 render 時被選中的選項 */
+  const prevCheckedOption = usePrevious(checkedOption);
   const sleepGroupRef = useRef<HTMLDivElement>(null);
 
   /**

@@ -10,22 +10,16 @@ import { FlexBox } from "../../styled-components/components/Box";
 import { ProgressGroup } from "../../styled-components/components/Progress";
 
 interface Props {
-  /**
-   * 全長
-   */
+  /** 全長 */
   totalLength: number;
-  /**
-   * 目前位置
-   */
+  /** 目前位置 */
   currentPosition: number;
   /**
    * 是否顯示文字標示
    * time: 時間格式的文字／original: 原始傳進來的文字
    */
   text?: keyof typeof TextFormats;
-  /**
-   * 是否已處理完更新事件
-   */
+  /** 是否已處理完更新事件 */
   updated?: boolean;
   /**
    * 更新進度條的事件處理
@@ -46,12 +40,12 @@ const Progress: FC<Props> = ({
   onUpdate,
   updated = false,
 }) => {
-  // range input 的 value
+  /** range input 的 value */
   const [inputValue, setInputValue] = useState<number>(
     (currentPosition / totalLength) * 100
   );
 
-  // 目前操作的 value，已操作完畢的話切換到 false
+  /** 目前操作的 value，已操作完畢的話切換到 false */
   const [changingValue, setChangingValue] = useState<number | false>(false);
 
   /**

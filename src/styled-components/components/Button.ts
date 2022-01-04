@@ -4,19 +4,13 @@ import { ThemeColors, ButtonStyles } from "../../models";
 import spacing from "../abstract/spacing";
 
 interface Props {
-  /**
-   * 按鈕樣式（空心或實心）
-   */
+  /** 按鈕樣式（空心或實心） */
   buttonStyle?: keyof typeof ButtonStyles;
-  /**
-   * 色系
-   */
+  /** 色系 */
   themeColor?: keyof typeof ThemeColors;
 }
 
-/**
- * 按鈕
- */
+/** 按鈕 */
 const Button = styled.button<Props>`
   padding: ${spacing[1]}em ${spacing[2]}em;
   margin: ${spacing[1]}em;

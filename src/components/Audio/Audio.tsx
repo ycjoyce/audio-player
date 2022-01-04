@@ -1,9 +1,7 @@
 import React, { SyntheticEvent, forwardRef, Ref } from "react";
 
 interface Props {
-  /**
-   * 音訊來源
-   */
+  /** 音訊來源 */
   src: string;
   /**
    * 音訊來源載入完成的事件處理
@@ -30,12 +28,14 @@ interface Props {
    * @param e
    */
   onTimeUpdate?(e: SyntheticEvent): void;
+  /**
+   * 音訊可以播放時的事件處理
+   * @param e
+   */
   onCanPlay?(e: SyntheticEvent): void;
 }
 
-/**
- * 音訊
- */
+/** 音訊元件 */
 const Audio = forwardRef(
   (
     {

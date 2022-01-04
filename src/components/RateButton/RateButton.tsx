@@ -3,9 +3,7 @@ import React, { FC, useState, useEffect } from "react";
 import Button from "../../styled-components/components/Button";
 
 interface Props {
-  /**
-   * 播放速度
-   */
+  /** 播放速度 */
   rates: number[];
   /**
    * 更新播放速度的事件處理
@@ -14,7 +12,11 @@ interface Props {
   onUpdate(rate: number): void;
 }
 
-// 播放速度按鈕
+/**
+ * 播放速度按鈕
+ * @param param0
+ * @returns
+ */
 const RateButton: FC<Props> = ({ rates, onUpdate }) => {
   const [currentRateIndex, setCurrentRateIndex] = useState(0);
   const rate = rates[currentRateIndex] < 1 ? 1 : rates[currentRateIndex];

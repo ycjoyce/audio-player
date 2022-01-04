@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, useEffect } from "react";
 
 import useTracks from "../../hooks/useTracks";
 import { Directions } from "../../models";
@@ -9,7 +9,7 @@ import Button from "../../styled-components/components/Button";
 import Player from "../Player/Player";
 
 /**
- * App
+ * App 元件
  * @returns
  */
 const App: FC = () => {
@@ -60,6 +60,7 @@ const App: FC = () => {
       default:
         break;
     }
+
     setCurrentTrackIndex(trackIndexes[targetIndex]);
   };
 

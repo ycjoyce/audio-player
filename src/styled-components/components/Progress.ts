@@ -5,9 +5,7 @@ import spacing from "../abstract/spacing";
 
 import { FullWidthBox } from "./Box";
 
-/**
- * 進度條樣式
- */
+/** 進度條樣式 */
 export const ProgressGroup = styled.div`
   font-size: ${fontSizes.small}em;
   margin-bottom: ${spacing[3]}em;

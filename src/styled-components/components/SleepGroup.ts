@@ -6,17 +6,13 @@ import fontSizes from "../abstract/font";
 
 import { List } from "./List";
 
-/**
- * 睡眠模式群組
- */
+/** 睡眠模式群組 */
 export const StyledSleepGroup = styled.div`
   position: relative;
   display: inline-block;
 `;
 
-/**
- * 睡眠模式列表
- */
+/** 睡眠模式列表 */
 export const StyledSleepList = styled(List)`
   position: absolute;
   right: 0.25em;
