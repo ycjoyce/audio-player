@@ -1,0 +1,1410 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Player/App Default 1`] = `
+<div
+  className="sc-hKwDye sc-iCfMLu hEyDkm jJrMHm"
+>
+  <div
+    data-testid="player"
+  >
+    <div
+      className="sc-gKclnd dStMSP"
+    >
+      <div
+        className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+      >
+        <div>
+          
+          
+        </div>
+        <div
+          className="sc-ksdxgE jpATnb"
+        >
+          
+        </div>
+      </div>
+    </div>
+    <audio
+      data-testid="audio"
+      onCanPlay={[Function]}
+      onEnded={[Function]}
+      onLoadedMetadata={[Function]}
+      onPause={[Function]}
+      onPlay={[Function]}
+      onTimeUpdate={[Function]}
+      src=""
+    />
+    <div
+      className="sc-gKclnd jHpsoA"
+      disabled={true}
+    >
+      <div
+        className="sc-pVTFL iAGUin"
+      >
+        <div
+          className="sc-gsDKAQ fNHwLb"
+          data-testid="full-box"
+        >
+          <input
+            className="sc-furwcr jnDZHi"
+            onInput={[Function]}
+            onMouseUp={[Function]}
+            type="range"
+            value={0}
+            width={0}
+          />
+        </div>
+        <div
+          className="sc-dkPtRN bFyXfZ"
+        >
+          <span>
+            00:00
+          </span>
+          <span>
+            00:00
+          </span>
+        </div>
+      </div>
+      <div
+        className="sc-eCImPb jNYilW"
+      >
+        <div
+          className="sc-jRQBWg kaglAe"
+        >
+          <button
+            className="sc-bdvvtL hssuwF"
+            onClick={[Function]}
+            title="跳至5秒前"
+          >
+            <i
+              className="fas fa-undo-alt"
+            />
+          </button>
+          <button
+            className="sc-bdvvtL hssuwF"
+            onClick={[Function]}
+            title="切至上一首"
+          >
+            <i
+              className="fas fa-backward"
+            />
+          </button>
+          <button
+            className="sc-bdvvtL hssuwF"
+            onClick={[Function]}
+            title="播放"
+          >
+            <i
+              className="far fa-play-circle"
+            />
+          </button>
+          <button
+            className="sc-bdvvtL hssuwF"
+            onClick={[Function]}
+            title="切至下一首"
+          >
+            <i
+              className="fas fa-forward"
+            />
+          </button>
+          <button
+            className="sc-bdvvtL hssuwF"
+            onClick={[Function]}
+            title="跳至5秒後"
+          >
+            <i
+              className="fas fa-redo-alt"
+            />
+          </button>
+        </div>
+        <div
+          className="sc-jRQBWg eIFZsp"
+        >
+          <button
+            className="sc-bdvvtL hssuwF"
+            onClick={[Function]}
+            title="整張播放"
+          >
+            <i
+              className="fas fa-long-arrow-alt-right"
+            />
+          </button>
+          <button
+            className="sc-bdvvtL hssuwF"
+            onClick={[Function]}
+            title="以1倍速度播放"
+          >
+            1
+            x
+          </button>
+          <div
+            className="sc-iqseJM eGfXG"
+          >
+            <button
+              className="sc-bdvvtL hssuwF"
+              onClick={[Function]}
+              title="設定睡眠"
+            >
+              <i
+                className="fas fa-hourglass-half"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Buttons/ChangeSongButton Default Next 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="切至下一首"
+>
+  下一首
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/ChangeSongButton Default Prev 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="切至上一首"
+>
+  上一首
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/ChangeSongButton Next With Content 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="切至下一首"
+>
+  <i
+    className="fas fa-forward"
+  />
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/ChangeSongButton Prev With Content 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="切至上一首"
+>
+  <i
+    className="fas fa-backward"
+  />
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/JumpButton Default Next 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="跳至10秒後"
+>
+  後10秒
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/JumpButton Default Prev 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="跳至10秒前"
+>
+  前10秒
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/JumpButton Next With Content 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="跳至10秒前"
+>
+  <i
+    className="fas fa-redo-alt"
+  />
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/JumpButton Prev With Content 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="跳至10秒前"
+>
+  <i
+    className="fas fa-undo-alt"
+  />
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/PlayButton Paused 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="播放"
+>
+  播放
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/PlayButton Paused With Content 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="播放"
+>
+  <i
+    className="far fa-play-circle"
+  />
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/PlayButton Playing 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="暫停"
+>
+  暫停
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/PlayButton Playing With Content 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="暫停"
+>
+  <i
+    className="far fa-pause-circle"
+  />
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/RateButton Default 1`] = `
+<button
+  className="sc-bdvvtL hssuwF"
+  onClick={[Function]}
+  title="以1倍速度播放"
+>
+  1
+  x
+</button>
+`;
+
+exports[`Storyshots Player/Buttons/SleepGroup Default 1`] = `
+<div
+  className="sc-iqseJM eGfXG"
+>
+  <button
+    className="sc-bdvvtL hssuwF"
+    onClick={[Function]}
+    title="設定睡眠"
+  >
+    設定睡眠
+  </button>
+</div>
+`;
+
+exports[`Storyshots Player/Buttons/SleepGroup/SleepList Default 1`] = `
+<ul
+  className="sc-jrQzAO sc-crHmcD kkJjxD iTwEda"
+  onClick={[Function]}
+>
+  <li
+    className="sc-kDTinF dppDve active"
+    data-minutes={0}
+  >
+    off
+  </li>
+  <li
+    className="sc-kDTinF dppDve"
+    data-minutes={1}
+  >
+    1分鐘
+  </li>
+  <li
+    className="sc-kDTinF dppDve"
+    data-minutes={2}
+  >
+    2分鐘
+  </li>
+</ul>
+`;
+
+exports[`Storyshots Player/Player Autoplay 1`] = `
+<div
+  data-testid="player"
+>
+  <div
+    className="sc-gKclnd dStMSP"
+  >
+    <div
+      className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+    >
+      <div>
+        <h5
+          className="sc-egiyK dLRiwB"
+        >
+          SoundHelix Song 1
+        </h5>
+        <h6
+          className="sc-egiyK gQhSJA"
+        >
+          T. Schürger
+        </h6>
+      </div>
+      <div
+        className="sc-ksdxgE jpATnb"
+      >
+        <img
+          alt="SoundHelix Song 1"
+          src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <audio
+    data-testid="audio"
+    onCanPlay={[Function]}
+    onEnded={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onTimeUpdate={[Function]}
+    src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  />
+  <div
+    className="sc-gKclnd dStMSP"
+    disabled={false}
+  >
+    <div
+      className="sc-pVTFL iAGUin"
+    >
+      <div
+        className="sc-gsDKAQ fNHwLb"
+        data-testid="full-box"
+      >
+        <input
+          className="sc-furwcr jnDZHi"
+          onInput={[Function]}
+          onMouseUp={[Function]}
+          type="range"
+          value={0}
+          width={0}
+        />
+      </div>
+      <div
+        className="sc-dkPtRN bFyXfZ"
+      >
+        <span>
+          00:00
+        </span>
+        <span>
+          00:00
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-eCImPb jNYilW"
+    >
+      <div
+        className="sc-jRQBWg kaglAe"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="播放"
+        >
+          <i
+            className="far fa-play-circle"
+          />
+        </button>
+      </div>
+      <div
+        className="sc-jRQBWg eIFZsp"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Player Change Rates 1`] = `
+<div
+  data-testid="player"
+>
+  <div
+    className="sc-gKclnd dStMSP"
+  >
+    <div
+      className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+    >
+      <div>
+        <h5
+          className="sc-egiyK dLRiwB"
+        >
+          SoundHelix Song 1
+        </h5>
+        <h6
+          className="sc-egiyK gQhSJA"
+        >
+          T. Schürger
+        </h6>
+      </div>
+      <div
+        className="sc-ksdxgE jpATnb"
+      >
+        <img
+          alt="SoundHelix Song 1"
+          src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <audio
+    data-testid="audio"
+    onCanPlay={[Function]}
+    onEnded={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onTimeUpdate={[Function]}
+    src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  />
+  <div
+    className="sc-gKclnd dStMSP"
+    disabled={false}
+  >
+    <div
+      className="sc-pVTFL iAGUin"
+    >
+      <div
+        className="sc-gsDKAQ fNHwLb"
+        data-testid="full-box"
+      >
+        <input
+          className="sc-furwcr jnDZHi"
+          onInput={[Function]}
+          onMouseUp={[Function]}
+          type="range"
+          value={0}
+          width={0}
+        />
+      </div>
+      <div
+        className="sc-dkPtRN bFyXfZ"
+      >
+        <span>
+          00:00
+        </span>
+        <span>
+          00:00
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-eCImPb jNYilW"
+    >
+      <div
+        className="sc-jRQBWg kaglAe"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="播放"
+        >
+          <i
+            className="far fa-play-circle"
+          />
+        </button>
+      </div>
+      <div
+        className="sc-jRQBWg eIFZsp"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="以1倍速度播放"
+        >
+          1
+          x
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Player Change Song 1`] = `
+<div
+  data-testid="player"
+>
+  <div
+    className="sc-gKclnd dStMSP"
+  >
+    <div
+      className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+    >
+      <div>
+        <h5
+          className="sc-egiyK dLRiwB"
+        >
+          SoundHelix Song 1
+        </h5>
+        <h6
+          className="sc-egiyK gQhSJA"
+        >
+          T. Schürger
+        </h6>
+      </div>
+      <div
+        className="sc-ksdxgE jpATnb"
+      >
+        <img
+          alt="SoundHelix Song 1"
+          src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <audio
+    data-testid="audio"
+    onCanPlay={[Function]}
+    onEnded={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onTimeUpdate={[Function]}
+    src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  />
+  <div
+    className="sc-gKclnd dStMSP"
+    disabled={false}
+  >
+    <div
+      className="sc-pVTFL iAGUin"
+    >
+      <div
+        className="sc-gsDKAQ fNHwLb"
+        data-testid="full-box"
+      >
+        <input
+          className="sc-furwcr jnDZHi"
+          onInput={[Function]}
+          onMouseUp={[Function]}
+          type="range"
+          value={0}
+          width={0}
+        />
+      </div>
+      <div
+        className="sc-dkPtRN bFyXfZ"
+      >
+        <span>
+          00:00
+        </span>
+        <span>
+          00:00
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-eCImPb jNYilW"
+    >
+      <div
+        className="sc-jRQBWg kaglAe"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="切至上一首"
+        >
+          <i
+            className="fas fa-backward"
+          />
+        </button>
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="播放"
+        >
+          <i
+            className="far fa-play-circle"
+          />
+        </button>
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="切至下一首"
+        >
+          <i
+            className="fas fa-forward"
+          />
+        </button>
+      </div>
+      <div
+        className="sc-jRQBWg eIFZsp"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Player Complete 1`] = `
+<div
+  data-testid="player"
+>
+  <div
+    className="sc-gKclnd dStMSP"
+  >
+    <div
+      className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+    >
+      <div>
+        <h5
+          className="sc-egiyK dLRiwB"
+        >
+          SoundHelix Song 1
+        </h5>
+        <h6
+          className="sc-egiyK gQhSJA"
+        >
+          T. Schürger
+        </h6>
+      </div>
+      <div
+        className="sc-ksdxgE jpATnb"
+      >
+        <img
+          alt="SoundHelix Song 1"
+          src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <audio
+    data-testid="audio"
+    onCanPlay={[Function]}
+    onEnded={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onTimeUpdate={[Function]}
+    src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  />
+  <div
+    className="sc-gKclnd dStMSP"
+    disabled={false}
+  >
+    <div
+      className="sc-pVTFL iAGUin"
+    >
+      <div
+        className="sc-gsDKAQ fNHwLb"
+        data-testid="full-box"
+      >
+        <input
+          className="sc-furwcr jnDZHi"
+          onInput={[Function]}
+          onMouseUp={[Function]}
+          type="range"
+          value={0}
+          width={0}
+        />
+      </div>
+      <div
+        className="sc-dkPtRN bFyXfZ"
+      >
+        <span>
+          00:00
+        </span>
+        <span>
+          00:00
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-eCImPb jNYilW"
+    >
+      <div
+        className="sc-jRQBWg kaglAe"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="跳至10秒前"
+        >
+          <i
+            className="fas fa-undo-alt"
+          />
+        </button>
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="切至上一首"
+        >
+          <i
+            className="fas fa-backward"
+          />
+        </button>
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="播放"
+        >
+          <i
+            className="far fa-play-circle"
+          />
+        </button>
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="切至下一首"
+        >
+          <i
+            className="fas fa-forward"
+          />
+        </button>
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="跳至10秒後"
+        >
+          <i
+            className="fas fa-redo-alt"
+          />
+        </button>
+      </div>
+      <div
+        className="sc-jRQBWg eIFZsp"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="以1倍速度播放"
+        >
+          1
+          x
+        </button>
+        <div
+          className="sc-iqseJM eGfXG"
+        >
+          <button
+            className="sc-bdvvtL hssuwF"
+            onClick={[Function]}
+            title="設定睡眠"
+          >
+            <i
+              className="fas fa-hourglass-half"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Player Default 1`] = `
+<div
+  data-testid="player"
+>
+  <div
+    className="sc-gKclnd dStMSP"
+  >
+    <div
+      className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+    >
+      <div>
+        <h5
+          className="sc-egiyK dLRiwB"
+        >
+          SoundHelix Song 1
+        </h5>
+        <h6
+          className="sc-egiyK gQhSJA"
+        >
+          T. Schürger
+        </h6>
+      </div>
+      <div
+        className="sc-ksdxgE jpATnb"
+      >
+        <img
+          alt="SoundHelix Song 1"
+          src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <audio
+    data-testid="audio"
+    onCanPlay={[Function]}
+    onEnded={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onTimeUpdate={[Function]}
+    src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  />
+  <div
+    className="sc-gKclnd dStMSP"
+    disabled={false}
+  >
+    <div
+      className="sc-pVTFL iAGUin"
+    >
+      <div
+        className="sc-gsDKAQ fNHwLb"
+        data-testid="full-box"
+      >
+        <input
+          className="sc-furwcr jnDZHi"
+          onInput={[Function]}
+          onMouseUp={[Function]}
+          type="range"
+          value={0}
+          width={0}
+        />
+      </div>
+      <div
+        className="sc-dkPtRN bFyXfZ"
+      >
+        <span>
+          00:00
+        </span>
+        <span>
+          00:00
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-eCImPb jNYilW"
+    >
+      <div
+        className="sc-jRQBWg kaglAe"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="播放"
+        >
+          <i
+            className="far fa-play-circle"
+          />
+        </button>
+      </div>
+      <div
+        className="sc-jRQBWg eIFZsp"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Player Jump Gap 1`] = `
+<div
+  data-testid="player"
+>
+  <div
+    className="sc-gKclnd dStMSP"
+  >
+    <div
+      className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+    >
+      <div>
+        <h5
+          className="sc-egiyK dLRiwB"
+        >
+          SoundHelix Song 1
+        </h5>
+        <h6
+          className="sc-egiyK gQhSJA"
+        >
+          T. Schürger
+        </h6>
+      </div>
+      <div
+        className="sc-ksdxgE jpATnb"
+      >
+        <img
+          alt="SoundHelix Song 1"
+          src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <audio
+    data-testid="audio"
+    onCanPlay={[Function]}
+    onEnded={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onTimeUpdate={[Function]}
+    src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  />
+  <div
+    className="sc-gKclnd dStMSP"
+    disabled={false}
+  >
+    <div
+      className="sc-pVTFL iAGUin"
+    >
+      <div
+        className="sc-gsDKAQ fNHwLb"
+        data-testid="full-box"
+      >
+        <input
+          className="sc-furwcr jnDZHi"
+          onInput={[Function]}
+          onMouseUp={[Function]}
+          type="range"
+          value={0}
+          width={0}
+        />
+      </div>
+      <div
+        className="sc-dkPtRN bFyXfZ"
+      >
+        <span>
+          00:00
+        </span>
+        <span>
+          00:00
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-eCImPb jNYilW"
+    >
+      <div
+        className="sc-jRQBWg kaglAe"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="跳至10秒前"
+        >
+          <i
+            className="fas fa-undo-alt"
+          />
+        </button>
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="播放"
+        >
+          <i
+            className="far fa-play-circle"
+          />
+        </button>
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="跳至10秒後"
+        >
+          <i
+            className="fas fa-redo-alt"
+          />
+        </button>
+      </div>
+      <div
+        className="sc-jRQBWg eIFZsp"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Player Sleep 1`] = `
+<div
+  data-testid="player"
+>
+  <div
+    className="sc-gKclnd dStMSP"
+  >
+    <div
+      className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+    >
+      <div>
+        <h5
+          className="sc-egiyK dLRiwB"
+        >
+          SoundHelix Song 1
+        </h5>
+        <h6
+          className="sc-egiyK gQhSJA"
+        >
+          T. Schürger
+        </h6>
+      </div>
+      <div
+        className="sc-ksdxgE jpATnb"
+      >
+        <img
+          alt="SoundHelix Song 1"
+          src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <audio
+    data-testid="audio"
+    onCanPlay={[Function]}
+    onEnded={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onTimeUpdate={[Function]}
+    src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  />
+  <div
+    className="sc-gKclnd dStMSP"
+    disabled={false}
+  >
+    <div
+      className="sc-pVTFL iAGUin"
+    >
+      <div
+        className="sc-gsDKAQ fNHwLb"
+        data-testid="full-box"
+      >
+        <input
+          className="sc-furwcr jnDZHi"
+          onInput={[Function]}
+          onMouseUp={[Function]}
+          type="range"
+          value={0}
+          width={0}
+        />
+      </div>
+      <div
+        className="sc-dkPtRN bFyXfZ"
+      >
+        <span>
+          00:00
+        </span>
+        <span>
+          00:00
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-eCImPb jNYilW"
+    >
+      <div
+        className="sc-jRQBWg kaglAe"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="播放"
+        >
+          <i
+            className="far fa-play-circle"
+          />
+        </button>
+      </div>
+      <div
+        className="sc-jRQBWg eIFZsp"
+      >
+        <div
+          className="sc-iqseJM eGfXG"
+        >
+          <button
+            className="sc-bdvvtL hssuwF"
+            onClick={[Function]}
+            title="設定睡眠"
+          >
+            <i
+              className="fas fa-hourglass-half"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Player Start From 1`] = `
+<div
+  data-testid="player"
+>
+  <div
+    className="sc-gKclnd dStMSP"
+  >
+    <div
+      className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+    >
+      <div>
+        <h5
+          className="sc-egiyK dLRiwB"
+        >
+          SoundHelix Song 1
+        </h5>
+        <h6
+          className="sc-egiyK gQhSJA"
+        >
+          T. Schürger
+        </h6>
+      </div>
+      <div
+        className="sc-ksdxgE jpATnb"
+      >
+        <img
+          alt="SoundHelix Song 1"
+          src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <audio
+    data-testid="audio"
+    onCanPlay={[Function]}
+    onEnded={[Function]}
+    onLoadedMetadata={[Function]}
+    onPause={[Function]}
+    onPlay={[Function]}
+    onTimeUpdate={[Function]}
+    src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+  />
+  <div
+    className="sc-gKclnd dStMSP"
+    disabled={false}
+  >
+    <div
+      className="sc-pVTFL iAGUin"
+    >
+      <div
+        className="sc-gsDKAQ fNHwLb"
+        data-testid="full-box"
+      >
+        <input
+          className="sc-furwcr jnDZHi"
+          onInput={[Function]}
+          onMouseUp={[Function]}
+          type="range"
+          value={0}
+          width={0}
+        />
+      </div>
+      <div
+        className="sc-dkPtRN bFyXfZ"
+      >
+        <span>
+          00:00
+        </span>
+        <span>
+          00:00
+        </span>
+      </div>
+    </div>
+    <div
+      className="sc-eCImPb jNYilW"
+    >
+      <div
+        className="sc-jRQBWg kaglAe"
+      >
+        <button
+          className="sc-bdvvtL hssuwF"
+          onClick={[Function]}
+          title="播放"
+        >
+          <i
+            className="far fa-play-circle"
+          />
+        </button>
+      </div>
+      <div
+        className="sc-jRQBWg eIFZsp"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Progress Default 1`] = `
+<div
+  className="sc-pVTFL iAGUin"
+>
+  <div
+    className="sc-gsDKAQ fNHwLb"
+    data-testid="full-box"
+  >
+    <input
+      className="sc-furwcr jnDZHi"
+      onInput={[Function]}
+      onMouseUp={[Function]}
+      type="range"
+      value={0}
+      width={0}
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Progress Original 1`] = `
+<div
+  className="sc-pVTFL iAGUin"
+>
+  <div
+    className="sc-gsDKAQ fNHwLb"
+    data-testid="full-box"
+  >
+    <input
+      className="sc-furwcr jnDZHi"
+      onInput={[Function]}
+      onMouseUp={[Function]}
+      type="range"
+      value={0}
+      width={0}
+    />
+  </div>
+  <div
+    className="sc-dkPtRN bFyXfZ"
+  >
+    <span>
+      0
+    </span>
+    <span>
+      100
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/Progress Time 1`] = `
+<div
+  className="sc-pVTFL iAGUin"
+>
+  <div
+    className="sc-gsDKAQ fNHwLb"
+    data-testid="full-box"
+  >
+    <input
+      className="sc-furwcr jnDZHi"
+      onInput={[Function]}
+      onMouseUp={[Function]}
+      type="range"
+      value={0}
+      width={0}
+    />
+  </div>
+  <div
+    className="sc-dkPtRN bFyXfZ"
+  >
+    <span>
+      00:00
+    </span>
+    <span>
+      01:40
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/TrackTitle Default 1`] = `
+<div
+  className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+>
+  <div>
+    <h5
+      className="sc-egiyK dLRiwB"
+    >
+      Wedding Dress
+    </h5>
+    <h6
+      className="sc-egiyK gQhSJA"
+    >
+      Jason
+    </h6>
+  </div>
+  <div
+    className="sc-ksdxgE jpATnb"
+  >
+    
+  </div>
+</div>
+`;
+
+exports[`Storyshots Player/TrackTitle With Image 1`] = `
+<div
+  className="sc-dkPtRN sc-bqiRlB bFyXfZ"
+>
+  <div>
+    <h5
+      className="sc-egiyK dLRiwB"
+    >
+      Wedding Dress
+    </h5>
+    <h6
+      className="sc-egiyK gQhSJA"
+    >
+      Jason
+    </h6>
+  </div>
+  <div
+    className="sc-ksdxgE jpATnb"
+  >
+    <img
+      alt="Wedding Dress"
+      src="https://play-lh.googleusercontent.com/mOkjjo5Rzcpk7BsHrsLWnqVadUK1FlLd2-UlQvYkLL4E9A0LpyODNIQinXPfUMjUrbE"
+      style={
+        Object {
+          "width": "100%",
+        }
+      }
+    />
+  </div>
+</div>
+`;

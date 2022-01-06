@@ -1,12 +1,14 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 import { Directions } from "../../models";
 
 import Button from "../../styled-components/components/Button";
 
-interface Props {
+export interface ChangeSongButtonProps {
   /** 要切到上首或下首 */
   direction: keyof typeof Directions;
+  /** 按鈕的內容 */
+  children?: ReactNode;
   /**
    * 切換曲目的方法
    * @param direction 上首或下首
@@ -19,7 +21,11 @@ interface Props {
  * @param params0
  * @returns
  */
-const ChangeSongButton: FC<Props> = ({ direction, children, onChange }) => (
+const ChangeSongButton: FC<ChangeSongButtonProps> = ({
+  direction,
+  children,
+  onChange,
+}) => (
   <Button
     title={`切至${direction === Directions.prev ? "上" : "下"}一首`}
     onClick={() => onChange(direction)}

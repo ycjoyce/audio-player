@@ -5,7 +5,7 @@ import { sleepOption } from "../../models";
 import { ListItem } from "../../styled-components/components/List";
 import { StyledSleepList } from "../../styled-components/components/SleepGroup";
 
-interface Props {
+export interface SleepListProps {
   /** 睡眠模式的選項 */
   options: sleepOption[];
   /** 被選到的選項 */
@@ -16,10 +16,14 @@ interface Props {
 
 /**
  * 設定睡眠模式的列表
- * @param param0 
- * @returns 
+ * @param param0
+ * @returns
  */
-const SleepList: FC<Props> = ({ options, checkedOption, setCheckedOption }) => {
+const SleepList: FC<SleepListProps> = ({
+  options,
+  checkedOption,
+  setCheckedOption,
+}) => {
   /**
    * 處理選項的點擊事件
    * @param e

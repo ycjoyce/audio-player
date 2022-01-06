@@ -9,7 +9,9 @@
     "test:watch": "npm run test -- --watch",
     "start": "webpack serve --mode development",
     "build": "webpack --mode production",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Joyce Chen",
   "license": "ISC",
@@ -22,6 +24,9 @@
     "@babel/preset-typescript": "^7.16.0",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
+    "@storybook/addon-actions": "^6.4.9",
+    "@storybook/addon-essentials": "^6.4.9",
+    "@storybook/addon-links": "^6.4.9",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.7",
@@ -51,27 +56,31 @@
     "postcss-loader": "^6.2.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.9.1",
+    "react-test-renderer": "^17.0.2",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
+    "typescript": "^3.9.3",
     "webpack": "^5.63.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.4.0",
-    "webpack-merge": "^5.8.0",
-    "typescript": "^3.9.3"
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@storybook/addon-storyshots": "^6.4.9",
+    "@storybook/react": "^6.4.9",
     "@testing-library/jest-dom": "^5.15.0",
     "@testing-library/react": "^12.1.2",
     "@types/react": "^17.0.34",
     "@types/react-dom": "^17.0.11",
     "axios": "^0.24.0",
     "normalize.css": "^8.0.1",
-    "styled-components": "^5.3.3",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "storybook": "^6.4.9",
+    "styled-components": "^5.3.3"
   },
   "browserslist": [
     "defaults"

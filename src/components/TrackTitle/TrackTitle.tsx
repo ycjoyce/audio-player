@@ -6,7 +6,7 @@ import {
   ImgBox,
 } from "../../styled-components/components/TrackTitle";
 
-interface Props {
+export interface TrackTitleProps {
   /** 曲目名稱 */
   name?: string;
   /** 曲目藝術家 */
@@ -20,7 +20,11 @@ interface Props {
  * @param param0
  * @returns
  */
-const TrackTitle: FC<Props> = ({ name = "", artist = "", img = "" }) => (
+const TrackTitle: FC<TrackTitleProps> = ({
+  name = "",
+  artist = "",
+  img = "",
+}) => (
   <StyledTrackTitle>
     <div>
       {name && (

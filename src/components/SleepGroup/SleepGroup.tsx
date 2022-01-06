@@ -8,7 +8,7 @@ import Button from "../../styled-components/components/Button";
 import { StyledSleepGroup } from "../../styled-components/components/SleepGroup";
 import SleepList from "../SleepList/SleepList";
 
-interface Props {
+export interface SleepGroupProps {
   /** 睡眠模式的選項 */
   options: sleepOption[];
   /** 是否已經更新完成 */
@@ -25,7 +25,12 @@ interface Props {
  * @param param0
  * @returns
  */
-const SleepGroup: FC<Props> = ({ options, updated, children, onUpdate }) => {
+const SleepGroup: FC<SleepGroupProps> = ({
+  options,
+  updated,
+  children,
+  onUpdate,
+}) => {
   /** 是否打開選項列表 */
   const [showList, setShowList] = useState<boolean>(false);
   /** 目前備選中的選項 */

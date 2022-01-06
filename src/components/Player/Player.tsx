@@ -35,7 +35,7 @@ import {
 import theme from "../../styled-components/abstract/theme";
 import { GlobalStyle } from "../../styled-components/components/Global";
 
-export interface Props {
+export interface PlayerProps {
   /** 音訊來源 */
   audioSrc?: audioSrcType;
   /** 要從哪個位置開始播（單位：秒） */
@@ -63,7 +63,7 @@ export interface Props {
  * @param param0
  * @returns
  */
-const Player: FC<Props> = ({
+const Player: FC<PlayerProps> = ({
   audioSrc = { name: "", artist: "", img: "", url: "" },
   startSec = 0,
   autoPlay = false,

@@ -9,7 +9,7 @@ import FullWidthBox from "../FullWidthBox/FullWidthBox";
 import { FlexBox } from "../../styled-components/components/Box";
 import { ProgressGroup } from "../../styled-components/components/Progress";
 
-interface Props {
+export interface ProgressProps {
   /** 全長 */
   totalLength: number;
   /** 目前位置 */
@@ -33,7 +33,7 @@ interface Props {
  * @param param0
  * @returns
  */
-const Progress: FC<Props> = ({
+const Progress: FC<ProgressProps> = ({
   totalLength,
   currentPosition,
   text,

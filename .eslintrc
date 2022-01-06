@@ -68,11 +68,20 @@
     "@typescript-eslint/no-empty-function": "off",
     "jsx-a11y/media-has-caption": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
-    "jsx-a11y/click-events-have-key-events": "off"
+    "jsx-a11y/click-events-have-key-events": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "import/resolver": {
       "typescript": {}
     }
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.stories.*"],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ]
 }

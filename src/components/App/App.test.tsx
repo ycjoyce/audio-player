@@ -8,6 +8,10 @@ describe("App", () => {
     .spyOn(window.HTMLMediaElement.prototype, "play")
     .mockImplementation(() => Promise.resolve());
 
+  jest
+    .spyOn(window.HTMLMediaElement.prototype, "pause")
+    .mockImplementation(() => Promise.resolve());
+
   it("should renders an App component", () => {
     render(<App />);
     expect(screen.getByTestId("player")).toBeInTheDocument();

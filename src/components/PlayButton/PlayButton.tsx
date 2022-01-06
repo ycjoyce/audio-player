@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from "react";
 
 import Button from "../../styled-components/components/Button";
 
-interface Props {
+export interface PlayButtonProps {
   /**
    * 目前是否正在播放
    */
@@ -26,7 +26,7 @@ interface Props {
  * @param param0
  * @returns
  */
-const PlayButton: FC<Props> = ({
+const PlayButton: FC<PlayButtonProps> = ({
   playing,
   content = { toPlay: "播放", toPause: "暫停" },
   onClick,

@@ -2,7 +2,7 @@ import React, { FC, useState, useEffect } from "react";
 
 import Button from "../../styled-components/components/Button";
 
-interface Props {
+export interface RateButtonProps {
   /** 播放速度 */
   rates: number[];
   /**
@@ -17,7 +17,7 @@ interface Props {
  * @param param0
  * @returns
  */
-const RateButton: FC<Props> = ({ rates, onUpdate }) => {
+const RateButton: FC<RateButtonProps> = ({ rates, onUpdate }) => {
   const [currentRateIndex, setCurrentRateIndex] = useState(0);
   const rate = rates[currentRateIndex] < 1 ? 1 : rates[currentRateIndex];
 

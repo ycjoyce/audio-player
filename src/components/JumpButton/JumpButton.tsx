@@ -1,14 +1,16 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 import { Directions } from "../../models";
 
 import Button from "../../styled-components/components/Button";
 
-interface Props {
+export interface JumpButtonProps {
   /**  要跳到哪個方向（前或後） */
   direction: keyof typeof Directions;
   /** 要跳到相隔秒數幾秒的地方 */
   gap: number;
+  /** 按鈕內容 */
+  children?: ReactNode;
   /**
    * 處理跳轉的方法
    * @param direction 方向（前或後）
@@ -22,7 +24,12 @@ interface Props {
  * @param param0
  * @returns
  */
-const JumpButton: FC<Props> = ({ direction, gap, children, onJump }) => (
+const JumpButton: FC<JumpButtonProps> = ({
+  direction,
+  gap,
+  children,
+  onJump,
+}) => (
   <Button
     title={`跳至${gap}秒${direction === Directions.prev ? "前" : "後"}`}
     onClick={() => onJump(direction, gap)}
