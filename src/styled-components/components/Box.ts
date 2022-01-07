@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import parseColor from "parse-color";
+
 import { ThemeColors } from "../../models";
 import theme from "../abstract/theme";
 
@@ -25,3 +27,4 @@ export const MaskBox = styled.div<{
 }>`
   background-color: rgba(255, 255, 255, 0.5);
 `;
+// background-color: rgba(${({ color = "white" }) => parseColor(color)}, 0.5);
