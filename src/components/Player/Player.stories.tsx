@@ -37,6 +37,12 @@ StartFrom.args = {
   startSec: 10,
 };
 
+export const ExceedDuration = Template.bind({});
+ExceedDuration.args = {
+  ...defaultItem,
+  startSec: 3000,
+};
+
 export const ChangeSong = Template.bind({});
 ChangeSong.args = {
   ...defaultItem,
@@ -86,4 +92,9 @@ Complete.args = {
       { text: "2分鐘", minutes: 2 },
     ],
   },
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  audioSrc: { ...defaultItem.audioSrc, url: "" },
 };

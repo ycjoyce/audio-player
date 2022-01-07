@@ -3,6 +3,8 @@ import React, { SyntheticEvent, forwardRef, Ref } from "react";
 interface Props {
   /** 音訊來源 */
   src: string;
+  /** 是否自動播放 */
+  autoPlay?: boolean;
   /**
    * 音訊來源載入完成的事件處理
    * @param e
@@ -40,6 +42,7 @@ const Audio = forwardRef(
   (
     {
       src,
+      autoPlay = false,
       onLoadedMetadata = () => {},
       onPlay = () => {},
       onPause = () => {},
@@ -53,6 +56,7 @@ const Audio = forwardRef(
       data-testid="audio"
       ref={ref}
       src={src}
+      autoPlay={autoPlay}
       onLoadedMetadata={onLoadedMetadata}
       onPlay={onPlay}
       onPause={onPause}

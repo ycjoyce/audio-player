@@ -27,6 +27,7 @@ import SleepGroup from "../SleepGroup/SleepGroup";
 import TrackTitle from "../TrackTitle/TrackTitle";
 import ChangeSongButton from "../ChangeSongButton/ChangeSongButton";
 import JumpButton from "../JumpButton/JumpButton";
+import Loading from "../Loading/Loading";
 import {
   PlayerButtonGroup,
   PlayerButtons,
@@ -75,14 +76,19 @@ const Player: FC<PlayerProps> = ({
 
   /** audio 元素 */
   const audioRef = useRef<HTMLAudioElement>(null);
-  const [audioCanPlay, setAudioCanPlay] = useState<boolean>(false);
+  // const [audioCanPlay, setAudioCanPlay] = useState<boolean>(false);
   const [audioDuration, setAudioDuration] = useState<number>(0);
   const [audioCurrentTime, setAudioCurrentTime] = useState<number>(0);
   const [playing, setPlaying] = useState<boolean>(false);
+  /** 上一次 render 時的指定播放進度位置 */
+  const prevStartSec = usePrevious(startSec);
 
   const [progressUpdated, setProgressUpdated] = useState<boolean>(false);
   const [sleepUpdated, setSleepUpdated] = useState<boolean>(false);
   const sleepTimer = useRef<null | NodeJS.Timeout>(null);
+
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
 
   /**
    * 播放音訊
@@ -114,6 +120,58 @@ const Player: FC<PlayerProps> = ({
   }, []);
 
   /**
+   * 切換音訊播放進度至指定位置
+   * @param audio 音訊 Element
+   * @param position 指定位置
+   */
+  const setPosition = (audio: HTMLAudioElement, position: number): void => {
+    const copiedAudio = audio;
+    const convertedPosition =
+      position > audio.duration ? audio.duration : position;
+    copiedAudio.currentTime = convertedPosition;
+  };
+
+  /**
+   * 控制 loading 狀態
+   * @param delay 延遲多少才要開始 loading（單位：毫秒）
+   * @returns 用於清除 loading 的 function
+   */
+  const handleLoadingStatus = (delay = 500): (() => void) => {
+    const timer = setTimeout(() => {
+      setLoading(true);
+    }, delay);
+
+    return () => {
+      clearTimeout(timer);
+      // setLoading(false);
+    };
+  };
+
+  /**
+   * 切換 loading 並設定指定位置
+   * @param audio 音訊 Element
+   * @param position 指定位置
+   */
+  const handleSetPosition = useCallback(
+    (audio: HTMLAudioElement, position: number): void => {
+      const clearLoading = handleLoadingStatus(500);
+      setPosition(audio, position);
+      audio.addEventListener("timeupdate", () => {
+        clearLoading();
+      });
+    },
+    []
+  );
+
+  useEffect(() => {
+    // 每當 startSec 變動重新設定音訊播放進度至指定位置
+    if (!audioRef.current || prevStartSec === undefined || error) {
+      return;
+    }
+    handleSetPosition(audioRef.current, startSec);
+  }, [startSec, prevStartSec, error, handleSetPosition]);
+
+  /**
    * 初始化播放設定
    */
   const initPlayingSettings = useCallback(
@@ -122,9 +180,9 @@ const Player: FC<PlayerProps> = ({
       // 設定全長
       setAudioDuration(copiedAudio.duration);
       // 設定開始時間
-      copiedAudio.currentTime = startSec;
+      handleSetPosition(copiedAudio, startSec);
     },
-    [startSec]
+    [startSec, handleSetPosition]
   );
 
   /**
@@ -139,7 +197,7 @@ const Player: FC<PlayerProps> = ({
    * 處理音源canplay事件
    */
   const handleAudioCanPlay = (): void => {
-    setAudioCanPlay(true);
+    // setAudioCanPlay(true);
   };
 
   /**
@@ -167,7 +225,7 @@ const Player: FC<PlayerProps> = ({
       if (!audio) {
         return;
       }
-      setAudioCanPlay(false);
+      // setAudioCanPlay(false);
       if (controls.changeSong instanceof Function) {
         controls.changeSong(direction);
       }
@@ -202,11 +260,11 @@ const Player: FC<PlayerProps> = ({
     if (!audio) {
       return;
     }
-    audio.currentTime = position;
+    handleSetPosition(audio, position);
     setProgressUpdated(false);
-    audio.onseeked = () => {
+    audio.addEventListener("seeked", () => {
       setProgressUpdated(true);
-    };
+    });
   };
 
   /**
@@ -239,9 +297,9 @@ const Player: FC<PlayerProps> = ({
       return;
     }
     audio.playbackRate = rate;
-    audio.onloadedmetadata = () => {
+    audio.addEventListener("loadedmetadata", () => {
       audio.playbackRate = rate;
-    };
+    });
   };
 
   /**
@@ -265,29 +323,41 @@ const Player: FC<PlayerProps> = ({
     }, minutes * 60 * 1000);
   };
 
-  useEffect(() => {
-    // 判斷自動播放
-    togglePlay(autoPlay && audioCanPlay);
-  }, [audioCanPlay, autoPlay, togglePlay]);
+  // useEffect(() => {
+  //   // 判斷自動播放
+  //   togglePlay(autoPlay && audioCanPlay);
+  // }, [audioCanPlay, autoPlay, togglePlay]);
 
   useEffect(() => {
     // 判斷是否正在播放
     const audio = audioRef.current;
     if (!audio) return;
-    setPlaying(!audio.paused);
-  });
+    audio.addEventListener("play", () => {
+      setPlaying(true);
+    });
+    audio.addEventListener("pause", () => {
+      setPlaying(false);
+    });
+    audio.addEventListener("error", () => {
+      setPlaying(false);
+      setError(true);
+    });
+    audio.addEventListener("loadstart", () => {
+      setError(false);
+    });
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+
       <div data-testid="player">
-        <PlayerSection>
-          <TrackTitle name={name} artist={artist} img={img} />
-        </PlayerSection>
+        {loading && <Loading />}
 
         <Audio
           ref={audioRef}
           src={url}
+          autoPlay={autoPlay}
           onLoadedMetadata={handleAudioLoadedMetadata}
           onTimeUpdate={handleAudioTimeUpdate}
           onPlay={handleAudioPlay}
@@ -296,87 +366,97 @@ const Player: FC<PlayerProps> = ({
           onCanPlay={handleAudioCanPlay}
         />
 
-        <PlayerSection disabled={!url}>
-          <Progress
-            totalLength={audioDuration}
-            currentPosition={audioCurrentTime}
-            text={TextFormats.time}
-            updated={progressUpdated}
-            onUpdate={handleProgressUpdate}
-          />
+        {error ? (
+          <div>Error</div>
+        ) : (
+          <>
+            <PlayerSection>
+              <TrackTitle name={name} artist={artist} img={img} />
+            </PlayerSection>
 
-          <PlayerButtonGroup>
-            <PlayerButtons level="main">
-              {controls.jumpGap && (
-                <JumpButton
-                  direction={Directions.prev}
-                  gap={controls.jumpGap || 0}
-                  onJump={handleJump}
-                >
-                  <i className="fas fa-undo-alt" />
-                </JumpButton>
-              )}
-
-              {controls.changeSong && (
-                <ChangeSongButton
-                  direction={Directions.prev}
-                  onChange={handleSongChange}
-                >
-                  <i className="fas fa-backward" />
-                </ChangeSongButton>
-              )}
-
-              <PlayButton
-                playing={playing}
-                content={{
-                  toPlay: <i className="far fa-play-circle" />,
-                  toPause: <i className="far fa-pause-circle" />,
-                }}
-                onClick={togglePlay}
+            <PlayerSection disabled={!url}>
+              <Progress
+                totalLength={audioDuration}
+                currentPosition={audioCurrentTime}
+                text={TextFormats.time}
+                updated={progressUpdated}
+                onUpdate={handleProgressUpdate}
               />
 
-              {controls.changeSong && (
-                <ChangeSongButton
-                  direction={Directions.next}
-                  onChange={handleSongChange}
-                >
-                  <i className="fas fa-forward" />
-                </ChangeSongButton>
-              )}
+              <PlayerButtonGroup>
+                <PlayerButtons level="main">
+                  {controls.jumpGap && (
+                    <JumpButton
+                      direction={Directions.prev}
+                      gap={controls.jumpGap || 0}
+                      onJump={handleJump}
+                    >
+                      <i className="fas fa-undo-alt" />
+                    </JumpButton>
+                  )}
 
-              {controls.jumpGap && (
-                <JumpButton
-                  direction={Directions.next}
-                  gap={controls.jumpGap || 0}
-                  onJump={handleJump}
-                >
-                  <i className="fas fa-redo-alt" />
-                </JumpButton>
-              )}
-            </PlayerButtons>
+                  {controls.changeSong && (
+                    <ChangeSongButton
+                      direction={Directions.prev}
+                      onChange={handleSongChange}
+                    >
+                      <i className="fas fa-backward" />
+                    </ChangeSongButton>
+                  )}
 
-            <PlayerButtons level="sub">
-              {controls.changeMode}
+                  <PlayButton
+                    playing={playing}
+                    content={{
+                      toPlay: <i className="far fa-play-circle" />,
+                      toPause: <i className="far fa-pause-circle" />,
+                    }}
+                    onClick={togglePlay}
+                  />
 
-              {controls.changeRates && (
-                <RateButton
-                  rates={controls.changeRates}
-                  onUpdate={handleRateChange}
-                />
-              )}
+                  {controls.changeSong && (
+                    <ChangeSongButton
+                      direction={Directions.next}
+                      onChange={handleSongChange}
+                    >
+                      <i className="fas fa-forward" />
+                    </ChangeSongButton>
+                  )}
 
-              {controls.sleep && (
-                <SleepGroup
-                  options={controls.sleep}
-                  updated={sleepUpdated}
-                  onUpdate={handleSleepChange}
-                >
-                  <i className="fas fa-hourglass-half" />
-                </SleepGroup>
-              )}
-            </PlayerButtons>
-          </PlayerButtonGroup>
-        </PlayerSection>
+                  {controls.jumpGap && (
+                    <JumpButton
+                      direction={Directions.next}
+                      gap={controls.jumpGap || 0}
+                      onJump={handleJump}
+                    >
+                      <i className="fas fa-redo-alt" />
+                    </JumpButton>
+                  )}
+                </PlayerButtons>
+
+                <PlayerButtons level="sub">
+                  {controls.changeMode}
+
+                  {controls.changeRates && (
+                    <RateButton
+                      rates={controls.changeRates}
+                      onUpdate={handleRateChange}
+                    />
+                  )}
+
+                  {controls.sleep && (
+                    <SleepGroup
+                      options={controls.sleep}
+                      updated={sleepUpdated}
+                      onUpdate={handleSleepChange}
+                    >
+                      <i className="fas fa-hourglass-half" />
+                    </SleepGroup>
+                  )}
+                </PlayerButtons>
+              </PlayerButtonGroup>
+            </PlayerSection>
+          </>
+        )}
       </div>
     </ThemeProvider>
   );

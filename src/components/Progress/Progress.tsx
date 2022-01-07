@@ -40,9 +40,43 @@ const Progress: FC<ProgressProps> = ({
   onUpdate,
   updated = false,
 }) => {
+  /**
+   * 調整不合法的全長及目前位置
+   * @param length 全長
+   * @param position 目前位置
+   * @returns 調整過後的全長及目前位置
+   */
+  const convertedArgs = (
+    length: number,
+    position: number
+  ): {
+    convertedLength: number;
+    convertedPosition: number;
+  } => {
+    // 如果全長或目前位置小於 0，則將其設為 0
+    let convertedPosition = position;
+    const convertedLength = length < 0 ? 0 : length;
+    if (position < 0) {
+      convertedPosition = 0;
+    } else if (position > convertedLength) {
+      // 如果目前位置大於全長，則將其設為與全長相同
+      convertedPosition = convertedLength;
+    }
+    return {
+      convertedLength,
+      convertedPosition,
+    };
+  };
+
+  /** 調整過後的全長及目前位置 */
+  const {
+    convertedLength: convertedTotalLength,
+    convertedPosition: convertedCurrentPosition,
+  } = convertedArgs(totalLength, currentPosition);
+
   /** range input 的 value */
   const [inputValue, setInputValue] = useState<number>(
-    (currentPosition / totalLength) * 100
+    (convertedCurrentPosition / convertedTotalLength) * 100
   );
 
   /** 目前操作的 value，已操作完畢的話切換到 false */
@@ -61,19 +95,19 @@ const Progress: FC<ProgressProps> = ({
    */
   const handleMouseUp = (): void => {
     if (changingValue !== false) {
-      onUpdate((changingValue * totalLength) / 100);
+      onUpdate((changingValue * convertedTotalLength) / 100);
     }
   };
 
   useEffect(() => {
     if (changingValue === false) {
       // 如果已經操作完畢，將 range input 的 value 設為現在位置的比例
-      setInputValue((currentPosition / totalLength) * 100);
+      setInputValue((convertedCurrentPosition / convertedTotalLength) * 100);
     } else {
       // 正在操作的話，將 range input 的 value 設為現在操作到的地方
       setInputValue(changingValue);
     }
-  }, [currentPosition, changingValue, totalLength]);
+  }, [convertedCurrentPosition, convertedTotalLength, changingValue]);
 
   useEffect(() => {
     if (updated) {
@@ -96,11 +130,13 @@ const Progress: FC<ProgressProps> = ({
         <FlexBox justifyContent="space-between">
           <span>
             {text === TextFormats.time
-              ? formatTime(currentPosition)
-              : currentPosition}
+              ? formatTime(convertedCurrentPosition)
+              : convertedCurrentPosition}
           </span>
           <span>
-            {text === TextFormats.time ? formatTime(totalLength) : totalLength}
+            {text === TextFormats.time
+              ? formatTime(convertedTotalLength)
+              : convertedTotalLength}
           </span>
         </FlexBox>
       )}
