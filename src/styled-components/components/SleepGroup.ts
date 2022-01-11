@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { ThemeColors } from "../../models";
-import theme from "../abstract/theme";
+// import theme from "../abstract/theme";
 import fontSizes from "../abstract/font";
 
 import { List } from "./List";
@@ -19,8 +19,8 @@ export const StyledSleepList = styled(List)`
   top: 2em;
   width: 100%;
   min-width: 100px;
-  border: 1px solid ${theme[ThemeColors.secondary]};
+  border: 1px solid ${({ theme }) => theme[ThemeColors.secondary]};
   font-size: ${fontSizes.small}em;
   text-align: center;
-  background-color: ${theme[ThemeColors.white]};
+  background-color: ${({ theme }) => theme[ThemeColors.white]};
 `;

@@ -24,7 +24,7 @@ const Button = styled.button<Props>`
   ${({ buttonStyle = ButtonStyles.solid, themeColor, theme }) =>
     buttonStyle === ButtonStyles.outline
       ? css`
-          background-color: ${theme.white};
+          background-color: ${theme[ThemeColors.white]};
           color: ${themeColor ? theme[themeColor] : "inherit"};
         `
       : css`

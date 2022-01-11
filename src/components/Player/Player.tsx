@@ -7,11 +7,9 @@ import React, {
   useEffect,
   useCallback,
 } from "react";
-import { ThemeProvider } from "styled-components";
-import "normalize.css";
-import "../../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
 import usePrevious from "../../hooks/usePrevious";
+import useLoading from "../../hooks/useLoading";
 import {
   sleepOption,
   audioSrc as audioSrcType,
@@ -28,13 +26,13 @@ import TrackTitle from "../TrackTitle/TrackTitle";
 import ChangeSongButton from "../ChangeSongButton/ChangeSongButton";
 import JumpButton from "../JumpButton/JumpButton";
 import Loading from "../Loading/Loading";
+import Error from "../Error/Error";
+import Empty from "../Empty/Empty";
 import {
   PlayerButtonGroup,
   PlayerButtons,
   PlayerSection,
 } from "../../styled-components/components/Player";
-import theme from "../../styled-components/abstract/theme";
-import { GlobalStyle } from "../../styled-components/components/Global";
 
 export interface PlayerProps {
   /** 音訊來源 */
@@ -87,8 +85,9 @@ const Player: FC<PlayerProps> = ({
   const [sleepUpdated, setSleepUpdated] = useState<boolean>(false);
   const sleepTimer = useRef<null | NodeJS.Timeout>(null);
 
-  const [loading, setLoading] = useState<boolean>(false);
+  const { loading, handleLoadingStatus } = useLoading();
   const [error, setError] = useState<boolean>(false);
+  const [empty, setEmpty] = useState<boolean>(false);
 
   /**
    * 播放音訊
@@ -132,22 +131,6 @@ const Player: FC<PlayerProps> = ({
   };
 
   /**
-   * 控制 loading 狀態
-   * @param delay 延遲多少才要開始 loading（單位：毫秒）
-   * @returns 用於清除 loading 的 function
-   */
-  const handleLoadingStatus = (delay = 500): (() => void) => {
-    const timer = setTimeout(() => {
-      setLoading(true);
-    }, delay);
-
-    return () => {
-      clearTimeout(timer);
-      // setLoading(false);
-    };
-  };
-
-  /**
    * 切換 loading 並設定指定位置
    * @param audio 音訊 Element
    * @param position 指定位置
@@ -160,16 +143,16 @@ const Player: FC<PlayerProps> = ({
         clearLoading();
       });
     },
-    []
+    [handleLoadingStatus]
   );
 
   useEffect(() => {
     // 每當 startSec 變動重新設定音訊播放進度至指定位置
-    if (!audioRef.current || prevStartSec === undefined || error) {
+    if (!audioRef.current || prevStartSec === undefined || error || !url) {
       return;
     }
     handleSetPosition(audioRef.current, startSec);
-  }, [startSec, prevStartSec, error, handleSetPosition]);
+  }, [startSec, prevStartSec, error, url, handleSetPosition]);
 
   /**
    * 初始化播放設定
@@ -339,126 +322,133 @@ const Player: FC<PlayerProps> = ({
       setPlaying(false);
     });
     audio.addEventListener("error", () => {
+      if (!url) return;
       setPlaying(false);
       setError(true);
     });
     audio.addEventListener("loadstart", () => {
       setError(false);
     });
-  }, []);
 
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
+    setEmpty(!url);
+  }, [url]);
 
-      <div data-testid="player">
-        {loading && <Loading />}
+  const renderContent = (isError: boolean, isEmpty: boolean): JSX.Element => {
+    if (isError) {
+      return <Error />;
+    }
+    if (isEmpty) {
+      return <Empty />;
+    }
+    return (
+      <>
+        <PlayerSection>
+          <TrackTitle name={name} artist={artist} img={img} />
+        </PlayerSection>
 
-        <Audio
-          ref={audioRef}
-          src={url}
-          autoPlay={autoPlay}
-          onLoadedMetadata={handleAudioLoadedMetadata}
-          onTimeUpdate={handleAudioTimeUpdate}
-          onPlay={handleAudioPlay}
-          onPause={() => handleAudioStop(false)}
-          onEnded={() => handleAudioStop(true)}
-          onCanPlay={handleAudioCanPlay}
-        />
+        <PlayerSection disabled={!url}>
+          <Progress
+            totalLength={audioDuration}
+            currentPosition={audioCurrentTime}
+            text={TextFormats.time}
+            updated={progressUpdated}
+            onUpdate={handleProgressUpdate}
+          />
 
-        {error ? (
-          <div>Error</div>
-        ) : (
-          <>
-            <PlayerSection>
-              <TrackTitle name={name} artist={artist} img={img} />
-            </PlayerSection>
+          <PlayerButtonGroup>
+            <PlayerButtons level="main">
+              {controls.jumpGap && (
+                <JumpButton
+                  direction={Directions.prev}
+                  gap={controls.jumpGap || 0}
+                  onJump={handleJump}
+                >
+                  <i className="fas fa-undo-alt" />
+                </JumpButton>
+              )}
 
-            <PlayerSection disabled={!url}>
-              <Progress
-                totalLength={audioDuration}
-                currentPosition={audioCurrentTime}
-                text={TextFormats.time}
-                updated={progressUpdated}
-                onUpdate={handleProgressUpdate}
+              {controls.changeSong && (
+                <ChangeSongButton
+                  direction={Directions.prev}
+                  onChange={handleSongChange}
+                >
+                  <i className="fas fa-backward" />
+                </ChangeSongButton>
+              )}
+
+              <PlayButton
+                playing={playing}
+                content={{
+                  toPlay: <i className="far fa-play-circle" />,
+                  toPause: <i className="far fa-pause-circle" />,
+                }}
+                onClick={togglePlay}
               />
 
-              <PlayerButtonGroup>
-                <PlayerButtons level="main">
-                  {controls.jumpGap && (
-                    <JumpButton
-                      direction={Directions.prev}
-                      gap={controls.jumpGap || 0}
-                      onJump={handleJump}
-                    >
-                      <i className="fas fa-undo-alt" />
-                    </JumpButton>
-                  )}
+              {controls.changeSong && (
+                <ChangeSongButton
+                  direction={Directions.next}
+                  onChange={handleSongChange}
+                >
+                  <i className="fas fa-forward" />
+                </ChangeSongButton>
+              )}
 
-                  {controls.changeSong && (
-                    <ChangeSongButton
-                      direction={Directions.prev}
-                      onChange={handleSongChange}
-                    >
-                      <i className="fas fa-backward" />
-                    </ChangeSongButton>
-                  )}
+              {controls.jumpGap && (
+                <JumpButton
+                  direction={Directions.next}
+                  gap={controls.jumpGap || 0}
+                  onJump={handleJump}
+                >
+                  <i className="fas fa-redo-alt" />
+                </JumpButton>
+              )}
+            </PlayerButtons>
 
-                  <PlayButton
-                    playing={playing}
-                    content={{
-                      toPlay: <i className="far fa-play-circle" />,
-                      toPause: <i className="far fa-pause-circle" />,
-                    }}
-                    onClick={togglePlay}
-                  />
+            <PlayerButtons level="sub">
+              {controls.changeMode}
 
-                  {controls.changeSong && (
-                    <ChangeSongButton
-                      direction={Directions.next}
-                      onChange={handleSongChange}
-                    >
-                      <i className="fas fa-forward" />
-                    </ChangeSongButton>
-                  )}
+              {controls.changeRates && (
+                <RateButton
+                  rates={controls.changeRates}
+                  onUpdate={handleRateChange}
+                />
+              )}
 
-                  {controls.jumpGap && (
-                    <JumpButton
-                      direction={Directions.next}
-                      gap={controls.jumpGap || 0}
-                      onJump={handleJump}
-                    >
-                      <i className="fas fa-redo-alt" />
-                    </JumpButton>
-                  )}
-                </PlayerButtons>
+              {controls.sleep && (
+                <SleepGroup
+                  options={controls.sleep}
+                  updated={sleepUpdated}
+                  onUpdate={handleSleepChange}
+                >
+                  <i className="fas fa-hourglass-half" />
+                </SleepGroup>
+              )}
+            </PlayerButtons>
+          </PlayerButtonGroup>
+        </PlayerSection>
+      </>
+    );
+  };
 
-                <PlayerButtons level="sub">
-                  {controls.changeMode}
+  return (
+    <div data-testid="player">
+      {loading && <Loading />}
 
-                  {controls.changeRates && (
-                    <RateButton
-                      rates={controls.changeRates}
-                      onUpdate={handleRateChange}
-                    />
-                  )}
+      <Audio
+        ref={audioRef}
+        src={url}
+        autoPlay={autoPlay}
+        onLoadedMetadata={handleAudioLoadedMetadata}
+        onTimeUpdate={handleAudioTimeUpdate}
+        onPlay={handleAudioPlay}
+        onPause={() => handleAudioStop(false)}
+        onEnded={() => handleAudioStop(true)}
+        onCanPlay={handleAudioCanPlay}
+      />
 
-                  {controls.sleep && (
-                    <SleepGroup
-                      options={controls.sleep}
-                      updated={sleepUpdated}
-                      onUpdate={handleSleepChange}
-                    >
-                      <i className="fas fa-hourglass-half" />
-                    </SleepGroup>
-                  )}
-                </PlayerButtons>
-              </PlayerButtonGroup>
-            </PlayerSection>
-          </>
-        )}
-      </div>
-    </ThemeProvider>
+      {renderContent(error, empty)}
+    </div>
   );
 };
 

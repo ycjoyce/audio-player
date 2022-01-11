@@ -2,7 +2,6 @@ import styled from "styled-components";
 import parseColor from "parse-color";
 
 import { ThemeColors } from "../../models";
-import theme from "../abstract/theme";
 
 /** 寬度 100% 的容器 */
 export const FullWidthBox = styled.div<{ marginBottom?: string }>`
@@ -25,6 +24,9 @@ export const MaskBox = styled.div<{
   color?: keyof typeof ThemeColors;
   opacity?: number;
 }>`
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(
+    ${({ theme, color = ThemeColors.white }) =>
+      parseColor(theme[color]).rgb.join(" ,")},
+    ${({ opacity = 0.5 }) => opacity}
+  );
 `;
-// background-color: rgba(${({ color = "white" }) => parseColor(color)}, 0.5);

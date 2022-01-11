@@ -94,7 +94,15 @@ Complete.args = {
   },
 };
 
+export const Empty = Template.bind({});
+Empty.args = {
+  audioSrc: { ...defaultItem.audioSrc, url: "" },
+};
+
 export const Error = Template.bind({});
 Error.args = {
-  audioSrc: { ...defaultItem.audioSrc, url: "" },
+  audioSrc: {
+    ...defaultItem.audioSrc,
+    url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp",
+  },
 };

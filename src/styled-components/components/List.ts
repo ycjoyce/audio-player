@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { ThemeColors } from "../../models";
-import theme from "../abstract/theme";
+// import theme from "../abstract/theme";
 
 /** 列表 */
 export const List = styled.ul`
@@ -15,11 +15,11 @@ export const ListItem = styled.li<{ clickable?: boolean }>`
   transition: background-color 0.2s;
 
   &:hover {
-    background-color: ${theme[ThemeColors.light]};
+    background-color: ${({ theme }) => theme[ThemeColors.light]};
   }
 
   &.active {
-    background-color: ${theme[ThemeColors.light]};
+    background-color: ${({ theme }) => theme[ThemeColors.light]};
   }
 
   ${({ clickable }) =>

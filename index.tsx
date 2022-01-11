@@ -1,4 +1,4 @@
-import Player from "./src/components/Player/Player";
+import PlayerWithTheme from "./src/components/PlayerWithTheme/PlayerWithTheme";
 import tracksHook from "./src/hooks/useTracks";
 import modesHook from "./src/hooks/useModes";
 
@@ -13,6 +13,6 @@ if (process.env.NODE_ENV === "development") {
   renderApp();
 }
 
-export default Player;
+export default PlayerWithTheme;
 export const useTracks = tracksHook;
 export const useModes = modesHook;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import { ThemeColors } from "../../models";
-import theme from "../abstract/theme";
+// import theme from "../abstract/theme";
 
 /**
  * 取得進度條底色樣式
@@ -9,24 +9,20 @@ import theme from "../abstract/theme";
  * @param color 進度條底色
  * @returns -webkit-slider-thumb 的 box-shadow
  */
-function getProgress(
-  inputWidth = 100,
-  color = theme[ThemeColors.primary]
-): string {
+const getProgress = (inputWidth = 100, color: string): string => {
   let val = `-1px 0 0 -2px ${color}`;
   for (let i = 2; i <= inputWidth; i += 1) {
     val += `, -${i}px 0 0 -2px ${color}`;
   }
   return val;
-}
+};
 
 /** type 為 range 的 input */
-export const InputRange = styled.input.attrs(
-  ({ width = 200 }: { width?: number }) => ({
-    type: "range",
-    width,
-  })
-)`
+export const InputRange = styled.input.attrs(({ width = 200, theme }) => ({
+  type: "range",
+  width,
+  theme,
+}))`
   -webkit-appearance: none;
   width: ${({ width }) => width}px;
   height: 10px;
@@ -37,7 +33,7 @@ export const InputRange = styled.input.attrs(
   cursor: pointer;
 
   &::-webkit-slider-runnable-track {
-    background-color: ${theme[ThemeColors.light]};
+    background-color: ${({ theme }) => theme[ThemeColors.light]};
     height: 5px;
     border-radius: 5px;
   }
@@ -48,9 +44,10 @@ export const InputRange = styled.input.attrs(
     position: relative;
     width: 10px;
     height: 10px;
-    background: ${theme[ThemeColors.white]};
+    background: ${({ theme }) => theme[ThemeColors.white]};
     border-radius: 100%;
-    border: 1px solid ${theme[ThemeColors.primary]};
-    box-shadow: ${({ width }) => getProgress(width)};
+    border: 1px solid ${({ theme }) => theme[ThemeColors.primary]};
+    box-shadow: ${({ width, theme }) =>
+      getProgress(width as number, theme[ThemeColors.primary])};
   }
 `;

@@ -1,18 +1,22 @@
-import React, { FC, useEffect } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 import useTracks from "../../hooks/useTracks";
+import useLoading from "../../hooks/useLoading";
 import { Directions } from "../../models";
 import { getTopTracks, getAlbumData } from "../../apis";
 
 import { PlayerBox } from "../../styled-components/components/Player";
 import Button from "../../styled-components/components/Button";
-import Player from "../Player/Player";
+import PlayerWithTheme from "../PlayerWithTheme/PlayerWithTheme";
+import Loading from "../Loading/Loading";
 
 /**
  * App 元件
  * @returns
  */
 const App: FC = () => {
+  const { loading, setLoading } = useLoading();
+
   // 曲目列表、播放模式列表
   const {
     autoPlay,
@@ -65,6 +69,8 @@ const App: FC = () => {
   };
 
   useEffect(() => {
+    setLoading(true);
+
     // 取得曲目列表
     const getTracks = async (): Promise<any> => {
       // 取得排名前 10 的曲目
@@ -94,33 +100,37 @@ const App: FC = () => {
       setTracks(result);
     };
 
-    getTracks();
-  }, [setTracks]);
+    getTracks().finally(() => setLoading(false));
+  }, [setTracks, setLoading]);
 
   return (
     <PlayerBox>
-      <Player
-        audioSrc={tracks[currentTrackIndex]}
-        autoPlay={autoPlay}
-        controls={{
-          changeSong: handleChangeSong,
-          jumpGap: 5,
-          changeRates: [1, 1.2, 1.5, 2],
-          sleep: [
-            { text: "off", minutes: 0 },
-            { text: "5秒", minutes: 1 / 12 },
-            { text: "10秒", minutes: 1 / 6 },
-            { text: "20秒", minutes: 1 / 3 },
-            { text: "30秒", minutes: 1 / 2 },
-            { text: "1分鐘", minutes: 1 },
-          ],
-          changeMode: (
-            <Button title={mode.title} onClick={handleChangeMode}>
-              {mode.content}
-            </Button>
-          ),
-        }}
-      />
+      {loading && <Loading />}
+
+      {tracks.length > 0 && (
+        <PlayerWithTheme
+          audioSrc={tracks[currentTrackIndex]}
+          autoPlay={autoPlay}
+          controls={{
+            changeSong: handleChangeSong,
+            jumpGap: 5,
+            changeRates: [1, 1.2, 1.5, 2],
+            sleep: [
+              { text: "off", minutes: 0 },
+              { text: "5秒", minutes: 1 / 12 },
+              { text: "10秒", minutes: 1 / 6 },
+              { text: "20秒", minutes: 1 / 3 },
+              { text: "30秒", minutes: 1 / 2 },
+              { text: "1分鐘", minutes: 1 },
+            ],
+            changeMode: (
+              <Button title={mode.title} onClick={handleChangeMode}>
+                {mode.content}
+              </Button>
+            ),
+          }}
+        />
+      )}
     </PlayerBox>
   );
 };

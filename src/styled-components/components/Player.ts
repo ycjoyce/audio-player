@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { ThemeColors } from "../../models";
-import theme from "../abstract/theme";
+// import theme from "../abstract/theme";
 import fontSizes from "../abstract/font";
 import spacing from "../abstract/spacing";
 
@@ -22,7 +22,7 @@ export const PlayerButtonGroup = styled.div`
   }
 
   ${Button} {
-    color: ${theme[ThemeColors.dark]};
+    color: ${({ theme }) => theme[ThemeColors.dark]};
   }
 `;
 

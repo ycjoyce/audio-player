@@ -1,4 +1,7 @@
 import React, { FC } from "react";
+
+import { ThemeColors } from "../../models";
+
 import { Loading as StyledLoading } from "../../styled-components/components/Loading";
 
 const Loading: FC = () => (
