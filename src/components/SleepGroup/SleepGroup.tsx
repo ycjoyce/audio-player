@@ -2,11 +2,19 @@ import React, { FC, useState, useEffect, useRef } from "react";
 
 import usePrevious from "../../hooks/usePrevious";
 import useClickOutside from "../../hooks/useClickOutside";
-import { sleepOption } from "../../models";
 
 import Button from "../../styled-components/components/Button";
+// eslint-disable-next-line max-len
 import { StyledSleepGroup } from "../../styled-components/components/SleepGroup";
 import SleepList from "../SleepList/SleepList";
+
+/** 睡眠模式選項 */
+export type sleepOption = {
+  /** 顯示文字 */
+  text: string;
+  /** 幾分鐘後暫停 */
+  minutes: number;
+};
 
 export interface SleepGroupProps {
   /** 睡眠模式的選項 */
@@ -41,9 +49,7 @@ const SleepGroup: FC<SleepGroupProps> = ({
   const prevCheckedOption = usePrevious(checkedOption);
   const sleepGroupRef = useRef<HTMLDivElement>(null);
 
-  /**
-   * 切換顯示選項列表
-   */
+  /** 切換顯示選項列表 */
   const toggleShowList = (): void => {
     setShowList(show => !show);
   };

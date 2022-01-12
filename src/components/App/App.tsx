@@ -1,13 +1,15 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useEffect } from "react";
+import { ThemeProvider } from "styled-components";
 
 import useTracks from "../../hooks/useTracks";
 import useLoading from "../../hooks/useLoading";
+import theme from "../../styled-components/abstract/theme";
 import { Directions } from "../../models";
+import Player, { audioSrcType } from "../Player/Player";
 import { getTopTracks, getAlbumData } from "../../apis";
 
 import { PlayerBox } from "../../styled-components/components/Player";
 import Button from "../../styled-components/components/Button";
-import PlayerWithTheme from "../PlayerWithTheme/PlayerWithTheme";
 import Loading from "../Loading/Loading";
 
 /**
@@ -17,7 +19,7 @@ import Loading from "../Loading/Loading";
 const App: FC = () => {
   const { loading, setLoading } = useLoading();
 
-  // 曲目列表、播放模式列表
+  /** 曲目列表、播放模式列表 */
   const {
     autoPlay,
     tracks,
@@ -35,7 +37,7 @@ const App: FC = () => {
    */
   const handleChangeSong = (direction: keyof typeof Directions): void => {
     const { repeat, trackIndexes } = mode;
-    // 當前曲目索引在模式的曲目索引列表中的索引
+    /** 當前曲目索引在模式的曲目索引列表中的索引 */
     let targetIndex = trackIndexes.indexOf(currentTrackIndex);
 
     switch (direction) {
@@ -71,21 +73,24 @@ const App: FC = () => {
   useEffect(() => {
     setLoading(true);
 
-    // 取得曲目列表
-    const getTracks = async (): Promise<any> => {
-      // 取得排名前 10 的曲目
+    /**
+     * 取得曲目列表
+     * @returns
+     */
+    const getTracks = async (): Promise<audioSrcType[]> => {
+      /** 排名前 10 的曲目 */
       const {
         data: { tracks: topTracks },
       } = await getTopTracks(10);
 
-      // 取得這些曲目的專輯資料
+      /** 排名前 10 的曲目的專輯資料 */
       const albumsData = await Promise.all(
         (topTracks as { albumId: string }[]).map(({ albumId }) =>
           getAlbumData(albumId)
         )
       );
 
-      // 串接成所需資料格式
+      /** 所需格式的資料 */
       const result = (topTracks as {
         name: string;
         artistName: string;
@@ -97,41 +102,45 @@ const App: FC = () => {
         img: albumsData[i].data.images[0].url,
       }));
 
-      setTracks(result);
+      return Promise.resolve(result);
     };
 
-    getTracks().finally(() => setLoading(false));
+    getTracks()
+      .then(res => setTracks(res))
+      .finally(() => setLoading(false));
   }, [setTracks, setLoading]);
 
   return (
-    <PlayerBox>
-      {loading && <Loading />}
+    <ThemeProvider theme={theme}>
+      <PlayerBox>
+        {loading && <Loading />}
 
-      {tracks.length > 0 && (
-        <PlayerWithTheme
-          audioSrc={tracks[currentTrackIndex]}
-          autoPlay={autoPlay}
-          controls={{
-            changeSong: handleChangeSong,
-            jumpGap: 5,
-            changeRates: [1, 1.2, 1.5, 2],
-            sleep: [
-              { text: "off", minutes: 0 },
-              { text: "5秒", minutes: 1 / 12 },
-              { text: "10秒", minutes: 1 / 6 },
-              { text: "20秒", minutes: 1 / 3 },
-              { text: "30秒", minutes: 1 / 2 },
-              { text: "1分鐘", minutes: 1 },
-            ],
-            changeMode: (
-              <Button title={mode.title} onClick={handleChangeMode}>
-                {mode.content}
-              </Button>
-            ),
-          }}
-        />
-      )}
-    </PlayerBox>
+        {tracks.length > 0 && (
+          <Player
+            audioSrc={tracks[currentTrackIndex]}
+            autoPlay={autoPlay}
+            controls={{
+              changeSong: handleChangeSong,
+              jumpGap: 5,
+              changeRates: [1, 1.2, 1.5, 2],
+              sleep: [
+                { text: "off", minutes: 0 },
+                { text: "5秒", minutes: 1 / 12 },
+                { text: "10秒", minutes: 1 / 6 },
+                { text: "20秒", minutes: 1 / 3 },
+                { text: "30秒", minutes: 1 / 2 },
+                { text: "1分鐘", minutes: 1 },
+              ],
+              changeMode: (
+                <Button title={mode.title} onClick={handleChangeMode}>
+                  {mode.content}
+                </Button>
+              ),
+            }}
+          />
+        )}
+      </PlayerBox>
+    </ThemeProvider>
   );
 };
 

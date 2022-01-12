@@ -21,9 +21,7 @@ const RateButton: FC<RateButtonProps> = ({ rates, onUpdate }) => {
   const [currentRateIndex, setCurrentRateIndex] = useState(0);
   const rate = rates[currentRateIndex] < 1 ? 1 : rates[currentRateIndex];
 
-  /**
-   * 處理速度按鈕點擊事件
-   */
+  /** 處理速度按鈕點擊事件 */
   const handleClick = (): void => {
     setCurrentRateIndex(idx => (idx + 1 > rates.length - 1 ? 0 : idx + 1));
   };

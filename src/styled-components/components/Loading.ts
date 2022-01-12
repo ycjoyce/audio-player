@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 
-import { ThemeColors } from "../../models";
+import { ThemeColors } from "../abstract/theme";
 import fontSizes from "../abstract/font";
 
 import { MaskBox } from "./Box";
@@ -22,9 +22,10 @@ export const Loading = styled(MaskBox)`
   width: 100%;
   height: 100%;
   text-align: center;
+  z-index: 2;
 
   .spinner {
-    font-size: ${fontSizes.headings["4"]}rem;
+    font-size: ${fontSizes.headings[4]}rem;
     color: ${({ theme }) => theme[ThemeColors.secondary]};
     animation: ${rotate} 1s ease-out infinite;
     position: relative;

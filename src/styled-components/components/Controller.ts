@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-import { ThemeColors } from "../../models";
-// import theme from "../abstract/theme";
+import { ThemeColors } from "../abstract/theme";
 
 /**
  * 取得進度條底色樣式

@@ -1,6 +1,6 @@
 import React, { FC, Dispatch, SetStateAction, MouseEvent } from "react";
 
-import { sleepOption } from "../../models";
+import { sleepOption } from "../SleepGroup/SleepGroup";
 
 import { ListItem } from "../../styled-components/components/List";
 import { StyledSleepList } from "../../styled-components/components/SleepGroup";

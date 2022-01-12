@@ -1,13 +1,18 @@
 import React, { FC, useState, useEffect, FormEvent } from "react";
 
 import formatTime from "../../utils/formatTime";
-import { TextFormats } from "../../models";
 
 import { InputRange } from "../../styled-components/components/Controller";
 
 import FullWidthBox from "../FullWidthBox/FullWidthBox";
 import { FlexBox } from "../../styled-components/components/Box";
 import { ProgressGroup } from "../../styled-components/components/Progress";
+
+/** 文字格式 */
+export enum TextFormats {
+  time = "time",
+  original = "original",
+}
 
 export interface ProgressProps {
   /** 全長 */
@@ -90,9 +95,7 @@ const Progress: FC<ProgressProps> = ({
     setChangingValue(+(e.target as HTMLInputElement).value);
   };
 
-  /**
-   * 處理 range input 的滑鼠抬起事件
-   */
+  /** 處理 range input 的滑鼠抬起事件 */
   const handleMouseUp = (): void => {
     if (changingValue !== false) {
       onUpdate((changingValue * convertedTotalLength) / 100);

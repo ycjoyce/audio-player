@@ -10,29 +10,28 @@ import React, {
 
 import usePrevious from "../../hooks/usePrevious";
 import useLoading from "../../hooks/useLoading";
-import {
-  sleepOption,
-  audioSrc as audioSrcType,
-  Directions,
-  TextFormats,
-} from "../../models";
+import { Directions } from "../../models";
+import { sleepOption } from "../SleepGroup/SleepGroup";
 
-import Audio from "../Audio/Audio";
-import Progress from "../Progress/Progress";
-import PlayButton from "../PlayButton/PlayButton";
-import RateButton from "../RateButton/RateButton";
-import SleepGroup from "../SleepGroup/SleepGroup";
+import Progress, { TextFormats } from "../Progress/Progress";
+import { PlayerSection } from "../../styled-components/components/Player";
 import TrackTitle from "../TrackTitle/TrackTitle";
-import ChangeSongButton from "../ChangeSongButton/ChangeSongButton";
-import JumpButton from "../JumpButton/JumpButton";
 import Loading from "../Loading/Loading";
 import Error from "../Error/Error";
 import Empty from "../Empty/Empty";
-import {
-  PlayerButtonGroup,
-  PlayerButtons,
-  PlayerSection,
-} from "../../styled-components/components/Player";
+import PlayerButtonGroup from "../PlayerButtonGroup/PlayerButtonGroup";
+
+/** 音源資料 */
+export type audioSrcType = {
+  /** 曲目名稱 */
+  name?: string;
+  /** 藝術家 */
+  artist?: string;
+  /** 專輯封面 */
+  img?: string;
+  /** 音源網址 */
+  url: string;
+};
 
 export interface PlayerProps {
   /** 音訊來源 */
@@ -41,21 +40,25 @@ export interface PlayerProps {
   startSec?: number;
   /** 是否自動開始播放 */
   autoPlay?: boolean;
-  /**
-   *  要顯示哪些控制功能
-   *  changeSong: 切換上下首歌的方法
-   *  jumpGap: 跳至前/後指定位置（單位：秒）
-   *  changeRates: 倍速播放（單位：倍）
-   *  sleep: text - 顯示的選項文字 / minutes - 幾分鐘後暫停播放
-   */
-  controls?: {
-    changeSong?(direction: keyof typeof Directions): void;
-    jumpGap?: number;
-    changeRates?: number[];
-    sleep?: sleepOption[];
-    changeMode?: ReactNode;
-  };
+  /** 控制功能 */
+  controls?: Controls;
 }
+
+export interface Controls {
+  /** 切換上下首歌的方法 */
+  changeSong?(direction: keyof typeof Directions): void;
+  /** 跳至前/後指定位置（單位：秒） */
+  jumpGap?: number;
+  /** 倍速播放（單位：倍） */
+  changeRates?: number[];
+  /** text - 顯示的選項文字 / minutes - 幾分鐘後暫停播放 */
+  sleep?: sleepOption[];
+  /** 播放模式 */
+  changeMode?: ReactNode;
+}
+
+/** audio 元素 */
+export type audioType = HTMLAudioElement | null;
 
 /**
  * 播放器
@@ -69,21 +72,15 @@ const Player: FC<PlayerProps> = ({
   controls = {},
 }) => {
   const { name, artist, img, url } = audioSrc;
-  /** 上一次 render 時的音源名稱 */
   const prevName = usePrevious(name);
 
-  /** audio 元素 */
   const audioRef = useRef<HTMLAudioElement>(null);
-  // const [audioCanPlay, setAudioCanPlay] = useState<boolean>(false);
   const [audioDuration, setAudioDuration] = useState<number>(0);
   const [audioCurrentTime, setAudioCurrentTime] = useState<number>(0);
   const [playing, setPlaying] = useState<boolean>(false);
-  /** 上一次 render 時的指定播放進度位置 */
   const prevStartSec = usePrevious(startSec);
 
   const [progressUpdated, setProgressUpdated] = useState<boolean>(false);
-  const [sleepUpdated, setSleepUpdated] = useState<boolean>(false);
-  const sleepTimer = useRef<null | NodeJS.Timeout>(null);
 
   const { loading, handleLoadingStatus } = useLoading();
   const [error, setError] = useState<boolean>(false);
@@ -93,7 +90,10 @@ const Player: FC<PlayerProps> = ({
    * 播放音訊
    * @param audio
    */
-  const play = (audio: HTMLAudioElement): void => {
+  const play = (audio: audioType): void => {
+    if (!audio) {
+      return;
+    }
     audio.play();
   };
 
@@ -101,29 +101,36 @@ const Player: FC<PlayerProps> = ({
    * 暫停音訊
    * @param audio
    */
-  const pause = (audio: HTMLAudioElement): void => {
+  const pause = (audio: audioType): void => {
+    if (!audio) {
+      return;
+    }
     audio.pause();
   };
 
   /**
    * 切換播放/暫停
+   * @param audio
    * @param toPlay 要播放或暫停
+   * @returns
    */
-  const togglePlay = useCallback((toPlay: boolean): void => {
-    const audio = audioRef.current;
+  const togglePlay = (audio: audioType, toPlay: boolean): void => {
     if (!audio) {
       return;
     }
     const action = toPlay ? play : pause;
     action(audio);
-  }, []);
+  };
 
   /**
    * 切換音訊播放進度至指定位置
-   * @param audio 音訊 Element
+   * @param audio
    * @param position 指定位置
    */
-  const setPosition = (audio: HTMLAudioElement, position: number): void => {
+  const setPosition = (audio: audioType, position: number): void => {
+    if (!audio) {
+      return;
+    }
     const copiedAudio = audio;
     const convertedPosition =
       position > audio.duration ? audio.duration : position;
@@ -132,11 +139,14 @@ const Player: FC<PlayerProps> = ({
 
   /**
    * 切換 loading 並設定指定位置
-   * @param audio 音訊 Element
+   * @param audio
    * @param position 指定位置
    */
   const handleSetPosition = useCallback(
-    (audio: HTMLAudioElement, position: number): void => {
+    (audio: audioType, position: number): void => {
+      if (!audio) {
+        return;
+      }
       const clearLoading = handleLoadingStatus(500);
       setPosition(audio, position);
       audio.addEventListener("timeupdate", () => {
@@ -146,48 +156,29 @@ const Player: FC<PlayerProps> = ({
     [handleLoadingStatus]
   );
 
-  useEffect(() => {
-    // 每當 startSec 變動重新設定音訊播放進度至指定位置
-    if (!audioRef.current || prevStartSec === undefined || error || !url) {
-      return;
-    }
-    handleSetPosition(audioRef.current, startSec);
-  }, [startSec, prevStartSec, error, url, handleSetPosition]);
-
   /**
    * 初始化播放設定
+   * @param audio
    */
-  const initPlayingSettings = useCallback(
-    (audio: HTMLAudioElement): void => {
-      const copiedAudio = audio;
-      // 設定全長
-      setAudioDuration(copiedAudio.duration);
-      // 設定開始時間
-      handleSetPosition(copiedAudio, startSec);
-    },
-    [startSec, handleSetPosition]
-  );
+  const initPlayingSettings = (audio: audioType): void => {
+    if (!audio) {
+      return;
+    }
+    const copiedAudio = audio;
+    // 設定全長
+    setAudioDuration(copiedAudio.duration);
+    // 設定開始時間
+    handleSetPosition(copiedAudio, startSec);
+  };
 
   /**
    * 處理音源載入完成
+   * @param e
    */
   const handleAudioLoadedMetadata = (e: SyntheticEvent): void => {
     const audio = e.target as HTMLAudioElement;
     initPlayingSettings(audio);
   };
-
-  /**
-   * 處理音源canplay事件
-   */
-  const handleAudioCanPlay = (): void => {
-    // setAudioCanPlay(true);
-  };
-
-  /**
-   * 處理音源播放
-   * @param e
-   */
-  const handleAudioPlay = (): void => {};
 
   /**
    * 處理音源播放時間更新
@@ -200,140 +191,87 @@ const Player: FC<PlayerProps> = ({
 
   /**
    * 處理歌曲切換
+   * @param audio
    * @param direction
    */
-  const handleSongChange = useCallback(
-    (direction: keyof typeof Directions): void => {
-      const audio = audioRef.current;
-      if (!audio) {
-        return;
-      }
-      // setAudioCanPlay(false);
-      if (controls.changeSong instanceof Function) {
-        controls.changeSong(direction);
-      }
-      if (prevName === name) {
-        initPlayingSettings(audio);
-      }
-    },
-    [controls, name, prevName, initPlayingSettings]
-  );
-
-  /**
-   * 處理音源暫停/結束
-   * @param ended 音源是否已經結束
-   */
-  const handleAudioStop = (ended = false): void => {
-    const audio = audioRef.current;
+  const handleSongChange = (
+    audio: HTMLAudioElement | null,
+    direction: keyof typeof Directions
+  ): void => {
     if (!audio) {
       return;
     }
+    if (controls.changeSong instanceof Function) {
+      controls.changeSong(direction);
+    }
+    if (prevName === name) {
+      initPlayingSettings(audio);
+    }
+  };
+
+  /**
+   * 處理音源暫停/結束
+   * @param audio
+   * @param ended 音源是否已經結束
+   */
+  const handleAudioStop = (audio: audioType, ended = false): void => {
+    if (!audio) {
+      return;
+    }
+    setPlaying(false);
     if (ended && controls.changeSong) {
       // 如果已經結束且有要切歌的話，切到下一首
-      handleSongChange(Directions.next);
+      handleSongChange(audio, Directions.next);
     }
   };
 
   /**
    * 處理進度條更新
+   * @param audio
    * @param position 進度條位置
    */
-  const handleProgressUpdate = (position: number): void => {
-    const audio = audioRef.current;
+  const handleProgressUpdate = (audio: audioType, position: number): void => {
     if (!audio) {
       return;
     }
     handleSetPosition(audio, position);
     setProgressUpdated(false);
-    audio.addEventListener("seeked", () => {
-      setProgressUpdated(true);
-    });
+  };
+
+  /** 處理音源錯誤 */
+  const handleAudioError = (): void => {
+    if (!url) return;
+    setPlaying(false);
+    setError(true);
+  };
+
+  /** 處理音源seeked */
+  const handleAudioSeeked = (): void => {
+    setProgressUpdated(true);
+  };
+
+  /** 處理音源播放 */
+  const handleAudioPlay = (): void => {
+    setPlaying(true);
+  };
+
+  /** 處理音源開始載入 */
+  const handleAudioLoadStart = (): void => {
+    setError(false);
   };
 
   /**
-   * 處理跳至間隔秒數
-   * @param direction 方向（前或後）
-   * @param gap 間隔（單位：秒）
+   * 以當前狀態渲染主要內容
+   * @param audio
+   * @param isError
+   * @param isEmpty
+   * @returns 主要內容
    */
-  const handleJump = (
-    direction: keyof typeof Directions,
-    gap: number
-  ): void => {
-    const audio = audioRef.current;
-    if (!audio) {
-      return;
-    }
-    if (direction === Directions.prev) {
-      audio.currentTime -= gap;
-    } else {
-      audio.currentTime += gap;
-    }
-  };
-
-  /**
-   * 處理播放速度改變
-   * @param rate 播放速度（倍數）
-   */
-  const handleRateChange = (rate: number): void => {
-    const audio = audioRef.current;
-    if (!audio) {
-      return;
-    }
-    audio.playbackRate = rate;
-    audio.addEventListener("loadedmetadata", () => {
-      audio.playbackRate = rate;
-    });
-  };
-
-  /**
-   * 處理睡眠模式改變
-   * @param minutes 幾分鐘後暫停播放
-   */
-  const handleSleepChange = (minutes: number): void => {
-    const audio = audioRef.current;
-    setSleepUpdated(false);
-    if (sleepTimer.current) {
-      clearTimeout(sleepTimer.current);
-    }
-    if (minutes === 0) {
-      return;
-    }
-    sleepTimer.current = setTimeout(() => {
-      setSleepUpdated(true);
-      if (audio) {
-        audio.pause();
-      }
-    }, minutes * 60 * 1000);
-  };
-
-  // useEffect(() => {
-  //   // 判斷自動播放
-  //   togglePlay(autoPlay && audioCanPlay);
-  // }, [audioCanPlay, autoPlay, togglePlay]);
-
-  useEffect(() => {
-    // 判斷是否正在播放
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.addEventListener("play", () => {
-      setPlaying(true);
-    });
-    audio.addEventListener("pause", () => {
-      setPlaying(false);
-    });
-    audio.addEventListener("error", () => {
-      if (!url) return;
-      setPlaying(false);
-      setError(true);
-    });
-    audio.addEventListener("loadstart", () => {
-      setError(false);
-    });
-
-    setEmpty(!url);
-  }, [url]);
-
-  const renderContent = (isError: boolean, isEmpty: boolean): JSX.Element => {
+  const renderContent = (
+    audio: audioType,
+    isError: boolean,
+    isEmpty: boolean
+  ): JSX.Element => {
     if (isError) {
       return <Error />;
     }
@@ -352,102 +290,63 @@ const Player: FC<PlayerProps> = ({
             currentPosition={audioCurrentTime}
             text={TextFormats.time}
             updated={progressUpdated}
-            onUpdate={handleProgressUpdate}
+            onUpdate={position => handleProgressUpdate(audio, position)}
           />
 
-          <PlayerButtonGroup>
-            <PlayerButtons level="main">
-              {controls.jumpGap && (
-                <JumpButton
-                  direction={Directions.prev}
-                  gap={controls.jumpGap || 0}
-                  onJump={handleJump}
-                >
-                  <i className="fas fa-undo-alt" />
-                </JumpButton>
-              )}
-
-              {controls.changeSong && (
-                <ChangeSongButton
-                  direction={Directions.prev}
-                  onChange={handleSongChange}
-                >
-                  <i className="fas fa-backward" />
-                </ChangeSongButton>
-              )}
-
-              <PlayButton
-                playing={playing}
-                content={{
-                  toPlay: <i className="far fa-play-circle" />,
-                  toPause: <i className="far fa-pause-circle" />,
-                }}
-                onClick={togglePlay}
-              />
-
-              {controls.changeSong && (
-                <ChangeSongButton
-                  direction={Directions.next}
-                  onChange={handleSongChange}
-                >
-                  <i className="fas fa-forward" />
-                </ChangeSongButton>
-              )}
-
-              {controls.jumpGap && (
-                <JumpButton
-                  direction={Directions.next}
-                  gap={controls.jumpGap || 0}
-                  onJump={handleJump}
-                >
-                  <i className="fas fa-redo-alt" />
-                </JumpButton>
-              )}
-            </PlayerButtons>
-
-            <PlayerButtons level="sub">
-              {controls.changeMode}
-
-              {controls.changeRates && (
-                <RateButton
-                  rates={controls.changeRates}
-                  onUpdate={handleRateChange}
-                />
-              )}
-
-              {controls.sleep && (
-                <SleepGroup
-                  options={controls.sleep}
-                  updated={sleepUpdated}
-                  onUpdate={handleSleepChange}
-                >
-                  <i className="fas fa-hourglass-half" />
-                </SleepGroup>
-              )}
-            </PlayerButtons>
-          </PlayerButtonGroup>
+          <PlayerButtonGroup
+            {...controls}
+            audioElement={audio}
+            playing={playing}
+            togglePlay={togglePlay}
+            handleSongChange={handleSongChange}
+          />
         </PlayerSection>
       </>
     );
   };
 
+  useEffect(() => {
+    // 每當 startSec 變動重新設定音訊播放進度至指定位置
+    if (
+      prevStartSec === undefined || // 初次載入
+      prevStartSec === startSec || // startSec 沒有變動
+      error || // 錯誤發生
+      !url // url 為空
+    ) {
+      return;
+    }
+    handleSetPosition(audioRef.current, startSec);
+  }, [startSec, prevStartSec, error, url, handleSetPosition]);
+
+  useEffect(() => {
+    // 判斷 url 是否為空
+    setEmpty(!url);
+  }, [url]);
+
   return (
     <div data-testid="player">
       {loading && <Loading />}
 
-      <Audio
+      <audio
+        data-testid="audio"
         ref={audioRef}
         src={url}
         autoPlay={autoPlay}
+        onLoadStart={handleAudioLoadStart}
         onLoadedMetadata={handleAudioLoadedMetadata}
         onTimeUpdate={handleAudioTimeUpdate}
         onPlay={handleAudioPlay}
-        onPause={() => handleAudioStop(false)}
-        onEnded={() => handleAudioStop(true)}
-        onCanPlay={handleAudioCanPlay}
+        onPause={({ target: audio }) =>
+          handleAudioStop(audio as HTMLAudioElement, false)
+        }
+        onEnded={({ target: audio }) =>
+          handleAudioStop(audio as HTMLAudioElement, true)
+        }
+        onSeeked={handleAudioSeeked}
+        onError={handleAudioError}
       />
 
-      {renderContent(error, empty)}
+      {renderContent(audioRef.current, error, empty)}
     </div>
   );
 };

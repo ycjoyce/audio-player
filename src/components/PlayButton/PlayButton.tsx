@@ -3,13 +3,9 @@ import React, { FC, ReactNode } from "react";
 import Button from "../../styled-components/components/Button";
 
 export interface PlayButtonProps {
-  /**
-   * 目前是否正在播放
-   */
+  /** 目前是否正在播放 */
   playing: boolean;
-  /**
-   * 按鈕要顯示的內容
-   */
+  /** 按鈕要顯示的內容 */
   content?: {
     toPlay: ReactNode;
     toPause: ReactNode;

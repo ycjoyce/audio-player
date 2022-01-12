@@ -9,6 +9,7 @@ import React, {
   JSXElementConstructor,
 } from "react";
 
+// eslint-disable-next-line max-len
 import { FullWidthBox as StyledFullWidthBox } from "../../styled-components/components/Box";
 
 /**
@@ -39,6 +40,7 @@ const FullWidthBox: FC = ({ children }) => {
       {/* 將容器寬度以 props: width 傳給子元素 */}
       {Children.map(children, child =>
         cloneElement(
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           child as ReactElement<any, string | JSXElementConstructor<any>>,
           { width }
         )

@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { ThemeColors } from "../../models";
-// import theme from "../abstract/theme";
+import { ThemeColors } from "../abstract/theme";
 
 /** 列表 */
 export const List = styled.ul`

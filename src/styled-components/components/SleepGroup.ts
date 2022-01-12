@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-import { ThemeColors } from "../../models";
-// import theme from "../abstract/theme";
+import { ThemeColors } from "../abstract/theme";
 import fontSizes from "../abstract/font";
 
 import { List } from "./List";

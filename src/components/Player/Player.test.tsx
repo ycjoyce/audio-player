@@ -1,5 +1,5 @@
 import React from "react";
-import { screen, render, fireEvent } from "@testing-library/react";
+import { screen, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Player from "./Player";
 
@@ -10,7 +10,7 @@ describe("Player", () => {
     url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
   };
 
-  const play = jest
+  jest
     .spyOn(window.HTMLMediaElement.prototype, "play")
     .mockImplementation(() => Promise.resolve());
 
@@ -65,17 +65,11 @@ describe("Player", () => {
     expect(screen.queryByRole("separator")).not.toBeInTheDocument();
   });
 
-  it("should play the song while clicking the PlayButton", () => {
-    render(<Player audioSrc={audioSrc} />);
-    const playButton = screen.getByRole("button");
-
-    fireEvent.click(playButton);
-    expect(play).toBeCalled();
-  });
-
   it(`should play the song automatically
-      if the autoPlay property set true`, () => {
+          if the autoPlay property set true`, async () => {
     render(<Player audioSrc={audioSrc} autoPlay />);
-    expect(play).toBeCalled();
+
+    const audio = screen.getByTestId("audio") as HTMLAudioElement;
+    expect(audio.autoplay).toBe(true);
   });
 });

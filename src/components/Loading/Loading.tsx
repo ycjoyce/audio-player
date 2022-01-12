@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 
-import { ThemeColors } from "../../models";
-
+// eslint-disable-next-line max-len
 import { Loading as StyledLoading } from "../../styled-components/components/Loading";
 
 const Loading: FC = () => (

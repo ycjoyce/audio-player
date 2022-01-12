@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import parseColor from "parse-color";
 
-import { ThemeColors } from "../../models";
+import { ThemeColors } from "../abstract/theme";
 
 /** 寬度 100% 的容器 */
 export const FullWidthBox = styled.div<{ marginBottom?: string }>`

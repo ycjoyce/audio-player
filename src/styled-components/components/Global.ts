@@ -1,11 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
-import { ThemeColors } from "../../models";
-import theme from "../abstract/theme";
+import theme, { ThemeColors } from "../abstract/theme";
 
 /** 全域樣式 */
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{ theme: typeof theme }>`
   body {
-    color: ${theme[ThemeColors.dark]};
+    color: ${props => props.theme[ThemeColors.dark]};
   }
 `;

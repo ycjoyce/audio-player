@@ -2,7 +2,7 @@ import PlayerWithTheme from "./src/components/PlayerWithTheme/PlayerWithTheme";
 import tracksHook from "./src/hooks/useTracks";
 import modesHook from "./src/hooks/useModes";
 
-const renderApp = async (): Promise<any> => {
+const renderApp = async (): Promise<void> => {
   const React = await import("react");
   const { render } = await import("react-dom");
   const { default: App } = await import("./src/components/App/App");

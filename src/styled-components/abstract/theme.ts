@@ -1,4 +1,11 @@
-import { ThemeColors } from "../../models";
+/** 色系 */
+export enum ThemeColors {
+  primary = "primary",
+  secondary = "secondary",
+  white = "white",
+  light = "light",
+  dark = "dark",
+}
 
 /** 色系 */
 const theme: { [themeColor in keyof typeof ThemeColors]: string } = {

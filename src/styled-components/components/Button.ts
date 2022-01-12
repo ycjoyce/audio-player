@@ -1,7 +1,13 @@
 import styled, { css } from "styled-components";
 
-import { ThemeColors, ButtonStyles } from "../../models";
+import { ThemeColors } from "../abstract/theme";
 import spacing from "../abstract/spacing";
+
+/** 按鈕樣式 */
+export enum ButtonStyles {
+  solid = "solid",
+  outline = "outline",
+}
 
 interface Props {
   /** 按鈕樣式（空心或實心） */
