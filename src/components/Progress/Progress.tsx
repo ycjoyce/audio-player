@@ -6,7 +6,7 @@ import { InputRange } from "../../styled-components/components/Controller";
 
 import FullWidthBox from "../FullWidthBox/FullWidthBox";
 import { FlexBox } from "../../styled-components/components/Box";
-import { ProgressGroup } from "../../styled-components/components/Progress";
+import { StyledProgressGroup } from "./Progress.style";
 
 /** 文字格式 */
 export enum TextFormats {
@@ -120,7 +120,7 @@ const Progress: FC<ProgressProps> = ({
   }, [updated]);
 
   return (
-    <ProgressGroup>
+    <StyledProgressGroup>
       <FullWidthBox>
         <InputRange
           value={Number.isNaN(inputValue) ? 0 : inputValue}
@@ -143,7 +143,7 @@ const Progress: FC<ProgressProps> = ({
           </span>
         </FlexBox>
       )}
-    </ProgressGroup>
+    </StyledProgressGroup>
   );
 };
 

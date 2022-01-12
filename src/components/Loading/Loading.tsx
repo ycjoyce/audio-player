@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 
-// eslint-disable-next-line max-len
-import { Loading as StyledLoading } from "../../styled-components/components/Loading";
+import StyledLoading from "./Loading.style";
 
 const Loading: FC = () => (
   <StyledLoading>

@@ -1,10 +1,7 @@
 import React, { FC } from "react";
 
 import Title from "../../styled-components/components/Title";
-import {
-  TrackTitle as StyledTrackTitle,
-  ImgBox,
-} from "../../styled-components/components/TrackTitle";
+import StyledTrackTitle, { StyledTrackImgBox } from "./TrackTitle.style";
 
 export interface TrackTitleProps {
   /** 曲目名稱 */
@@ -38,9 +35,9 @@ const TrackTitle: FC<TrackTitleProps> = ({
         </Title>
       )}
     </div>
-    <ImgBox>
+    <StyledTrackImgBox>
       {img && <img src={img} alt={name || ""} style={{ width: "100%" }} />}
-    </ImgBox>
+    </StyledTrackImgBox>
   </StyledTrackTitle>
 );
 

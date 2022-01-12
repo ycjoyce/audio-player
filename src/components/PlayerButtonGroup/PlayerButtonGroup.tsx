@@ -3,10 +3,9 @@ import React, { FC, useState, useRef } from "react";
 import { Controls, audioType } from "../Player/Player";
 import { Directions } from "../../models";
 
-import {
-  PlayerButtonGroup as StyledPlayerButtonGroup,
-  PlayerButtons,
-} from "../../styled-components/components/Player";
+import StyledPlayerButtonGroup, {
+  StyledPlayerButtons,
+} from "./PlayerButtonGroup.style";
 import JumpButton from "../JumpButton/JumpButton";
 import ChangeSongButton from "../ChangeSongButton/ChangeSongButton";
 import PlayButton from "../PlayButton/PlayButton";
@@ -110,7 +109,7 @@ const PlayerButtonGroup: FC<PlayerButtonGroupProps> = ({
 
   return (
     <StyledPlayerButtonGroup>
-      <PlayerButtons level="main">
+      <StyledPlayerButtons level="main">
         {jumpGap && (
           <JumpButton
             direction={Directions.prev}
@@ -157,9 +156,9 @@ const PlayerButtonGroup: FC<PlayerButtonGroupProps> = ({
             <i className="fas fa-redo-alt" />
           </JumpButton>
         )}
-      </PlayerButtons>
+      </StyledPlayerButtons>
 
-      <PlayerButtons level="sub">
+      <StyledPlayerButtons level="sub">
         {changeMode}
 
         {changeRates && (
@@ -178,7 +177,7 @@ const PlayerButtonGroup: FC<PlayerButtonGroupProps> = ({
             <i className="fas fa-hourglass-half" />
           </SleepGroup>
         )}
-      </PlayerButtons>
+      </StyledPlayerButtons>
     </StyledPlayerButtonGroup>
   );
 };

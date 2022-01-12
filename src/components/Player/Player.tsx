@@ -13,8 +13,8 @@ import useLoading from "../../hooks/useLoading";
 import { Directions } from "../../models";
 import { sleepOption } from "../SleepGroup/SleepGroup";
 
+import { StyledPlayerSection } from "./Player.style";
 import Progress, { TextFormats } from "../Progress/Progress";
-import { PlayerSection } from "../../styled-components/components/Player";
 import TrackTitle from "../TrackTitle/TrackTitle";
 import Loading from "../Loading/Loading";
 import Error from "../Error/Error";
@@ -280,11 +280,11 @@ const Player: FC<PlayerProps> = ({
     }
     return (
       <>
-        <PlayerSection>
+        <StyledPlayerSection>
           <TrackTitle name={name} artist={artist} img={img} />
-        </PlayerSection>
+        </StyledPlayerSection>
 
-        <PlayerSection disabled={!url}>
+        <StyledPlayerSection disabled={!url}>
           <Progress
             totalLength={audioDuration}
             currentPosition={audioCurrentTime}
@@ -300,7 +300,7 @@ const Player: FC<PlayerProps> = ({
             togglePlay={togglePlay}
             handleSongChange={handleSongChange}
           />
-        </PlayerSection>
+        </StyledPlayerSection>
       </>
     );
   };

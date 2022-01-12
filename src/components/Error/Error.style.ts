@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import fontSizes from "../abstract/font";
-import spacing from "../abstract/spacing";
+import fontSizes from "../../styled-components/abstract/font";
+import spacing from "../../styled-components/abstract/spacing";
 
-const Error = styled.div`
+const StyledError = styled.div`
   font-size: ${fontSizes.headings[2]}rem;
   text-align: center;
   font-weight: lighter;
@@ -14,4 +14,4 @@ const Error = styled.div`
   }
 `;
 
-export default Error;
+export default StyledError;

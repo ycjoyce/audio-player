@@ -1,15 +1,9 @@
 import styled from "styled-components";
 
-import { ThemeColors } from "../abstract/theme";
-import fontSizes from "../abstract/font";
+import { ThemeColors } from "../../styled-components/abstract/theme";
+import fontSizes from "../../styled-components/abstract/font";
 
-import { List } from "./List";
-
-/** 睡眠模式群組 */
-export const StyledSleepGroup = styled.div`
-  position: relative;
-  display: inline-block;
-`;
+import { List } from "../../styled-components/components/List";
 
 /** 睡眠模式列表 */
 export const StyledSleepList = styled(List)`

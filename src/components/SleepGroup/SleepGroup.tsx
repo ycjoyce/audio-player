@@ -3,9 +3,8 @@ import React, { FC, useState, useEffect, useRef } from "react";
 import usePrevious from "../../hooks/usePrevious";
 import useClickOutside from "../../hooks/useClickOutside";
 
+import { StyledSleepGroup } from "./SleepGroup.style";
 import Button from "../../styled-components/components/Button";
-// eslint-disable-next-line max-len
-import { StyledSleepGroup } from "../../styled-components/components/SleepGroup";
 import SleepList from "../SleepList/SleepList";
 
 /** 睡眠模式選項 */

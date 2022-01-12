@@ -3,12 +3,13 @@ import { ThemeProvider } from "styled-components";
 
 import useTracks from "../../hooks/useTracks";
 import useLoading from "../../hooks/useLoading";
-import theme from "../../styled-components/abstract/theme";
+import { getTopTracks, getAlbumData } from "../../apis";
 import { Directions } from "../../models";
 import Player, { audioSrcType } from "../Player/Player";
-import { getTopTracks, getAlbumData } from "../../apis";
+import theme from "../../styled-components/abstract/theme";
+import GlobalStyle from "../../styled-components/components/Global";
 
-import { PlayerBox } from "../../styled-components/components/Player";
+import { StyledPlayerBox } from "./App.style";
 import Button from "../../styled-components/components/Button";
 import Loading from "../Loading/Loading";
 
@@ -112,7 +113,9 @@ const App: FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <PlayerBox>
+      <GlobalStyle />
+
+      <StyledPlayerBox>
         {loading && <Loading />}
 
         {tracks.length > 0 && (
@@ -139,7 +142,7 @@ const App: FC = () => {
             }}
           />
         )}
-      </PlayerBox>
+      </StyledPlayerBox>
     </ThemeProvider>
   );
 };

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import StyledError from "../../styled-components/components/Error";
+import StyledError from "./Error.style";
 
 const Error: FC = () => (
   <StyledError>

@@ -2,13 +2,13 @@
 
 exports[`Storyshots Player/App Default 1`] = `
 <div
-  className="sc-hKwDye sc-jrQzAO hEyDkm hZYxMB"
+  className="sc-eCImPb sc-fFeiMQ ksdxdm gINdEg"
 />
 `;
 
 exports[`Storyshots Player/Buttons/ChangeSongButton Default Next 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="切至下一首"
 >
@@ -18,7 +18,7 @@ exports[`Storyshots Player/Buttons/ChangeSongButton Default Next 1`] = `
 
 exports[`Storyshots Player/Buttons/ChangeSongButton Default Prev 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="切至上一首"
 >
@@ -28,7 +28,7 @@ exports[`Storyshots Player/Buttons/ChangeSongButton Default Prev 1`] = `
 
 exports[`Storyshots Player/Buttons/ChangeSongButton Next With Content 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="切至下一首"
 >
@@ -40,7 +40,7 @@ exports[`Storyshots Player/Buttons/ChangeSongButton Next With Content 1`] = `
 
 exports[`Storyshots Player/Buttons/ChangeSongButton Prev With Content 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="切至上一首"
 >
@@ -52,7 +52,7 @@ exports[`Storyshots Player/Buttons/ChangeSongButton Prev With Content 1`] = `
 
 exports[`Storyshots Player/Buttons/JumpButton Default Next 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="跳至10秒後"
 >
@@ -62,7 +62,7 @@ exports[`Storyshots Player/Buttons/JumpButton Default Next 1`] = `
 
 exports[`Storyshots Player/Buttons/JumpButton Default Prev 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="跳至10秒前"
 >
@@ -72,7 +72,7 @@ exports[`Storyshots Player/Buttons/JumpButton Default Prev 1`] = `
 
 exports[`Storyshots Player/Buttons/JumpButton Next With Content 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="跳至10秒前"
 >
@@ -84,7 +84,7 @@ exports[`Storyshots Player/Buttons/JumpButton Next With Content 1`] = `
 
 exports[`Storyshots Player/Buttons/JumpButton Prev With Content 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="跳至10秒前"
 >
@@ -96,7 +96,7 @@ exports[`Storyshots Player/Buttons/JumpButton Prev With Content 1`] = `
 
 exports[`Storyshots Player/Buttons/PlayButton Paused 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="播放"
 >
@@ -106,7 +106,7 @@ exports[`Storyshots Player/Buttons/PlayButton Paused 1`] = `
 
 exports[`Storyshots Player/Buttons/PlayButton Paused With Content 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="播放"
 >
@@ -118,7 +118,7 @@ exports[`Storyshots Player/Buttons/PlayButton Paused With Content 1`] = `
 
 exports[`Storyshots Player/Buttons/PlayButton Playing 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="暫停"
 >
@@ -128,7 +128,7 @@ exports[`Storyshots Player/Buttons/PlayButton Playing 1`] = `
 
 exports[`Storyshots Player/Buttons/PlayButton Playing With Content 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="暫停"
 >
@@ -140,7 +140,7 @@ exports[`Storyshots Player/Buttons/PlayButton Playing With Content 1`] = `
 
 exports[`Storyshots Player/Buttons/RateButton Default 1`] = `
 <button
-  className="sc-gKclnd besIqa"
+  className="sc-iqseJM iuDkSW"
   onClick={[Function]}
   title="以1倍速度播放"
 >
@@ -151,10 +151,10 @@ exports[`Storyshots Player/Buttons/RateButton Default 1`] = `
 
 exports[`Storyshots Player/Buttons/SleepGroup Default 1`] = `
 <div
-  className="sc-fotOHu cBCAyI"
+  className="sc-bqiRlB iJIxst"
 >
   <button
-    className="sc-gKclnd besIqa"
+    className="sc-iqseJM iuDkSW"
     onClick={[Function]}
     title="設定睡眠"
   >
@@ -165,7 +165,7 @@ exports[`Storyshots Player/Buttons/SleepGroup Default 1`] = `
 
 exports[`Storyshots Player/Buttons/SleepGroup/SleepList Default 1`] = `
 <ul
-  className="sc-ksdxgE sc-fFeiMQ iJmVec bquPWp"
+  className="sc-ksdxgE sc-fotOHu iJmVec eopAKW"
   onClick={[Function]}
 >
   <li
@@ -191,7 +191,7 @@ exports[`Storyshots Player/Buttons/SleepGroup/SleepList Default 1`] = `
 
 exports[`Storyshots Player/Loading Default 1`] = `
 <div
-  className="sc-eCImPb sc-egiyK huntRY hvFbZJ"
+  className="sc-jRQBWg sc-jrQzAO jxJocT ldsOlp"
 >
   <i
     className="fas fa-spinner spinner"
@@ -217,25 +217,25 @@ exports[`Storyshots Player/Player Autoplay 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -250,18 +250,18 @@ exports[`Storyshots Player/Player Autoplay 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -270,7 +270,7 @@ exports[`Storyshots Player/Player Autoplay 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -281,13 +281,13 @@ exports[`Storyshots Player/Player Autoplay 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -297,7 +297,7 @@ exports[`Storyshots Player/Player Autoplay 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       />
     </div>
   </div>
@@ -322,25 +322,25 @@ exports[`Storyshots Player/Player Change Rates 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -355,18 +355,18 @@ exports[`Storyshots Player/Player Change Rates 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -375,7 +375,7 @@ exports[`Storyshots Player/Player Change Rates 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -386,13 +386,13 @@ exports[`Storyshots Player/Player Change Rates 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -402,10 +402,10 @@ exports[`Storyshots Player/Player Change Rates 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="以1倍速度播放"
         >
@@ -436,25 +436,25 @@ exports[`Storyshots Player/Player Change Song 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -469,18 +469,18 @@ exports[`Storyshots Player/Player Change Song 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -489,7 +489,7 @@ exports[`Storyshots Player/Player Change Song 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -500,13 +500,13 @@ exports[`Storyshots Player/Player Change Song 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="切至上一首"
         >
@@ -515,7 +515,7 @@ exports[`Storyshots Player/Player Change Song 1`] = `
           />
         </button>
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -524,7 +524,7 @@ exports[`Storyshots Player/Player Change Song 1`] = `
           />
         </button>
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="切至下一首"
         >
@@ -534,7 +534,7 @@ exports[`Storyshots Player/Player Change Song 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       />
     </div>
   </div>
@@ -559,25 +559,25 @@ exports[`Storyshots Player/Player Complete 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -592,18 +592,18 @@ exports[`Storyshots Player/Player Complete 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -612,7 +612,7 @@ exports[`Storyshots Player/Player Complete 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -623,13 +623,13 @@ exports[`Storyshots Player/Player Complete 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="跳至10秒前"
         >
@@ -638,7 +638,7 @@ exports[`Storyshots Player/Player Complete 1`] = `
           />
         </button>
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="切至上一首"
         >
@@ -647,7 +647,7 @@ exports[`Storyshots Player/Player Complete 1`] = `
           />
         </button>
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -656,7 +656,7 @@ exports[`Storyshots Player/Player Complete 1`] = `
           />
         </button>
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="切至下一首"
         >
@@ -665,7 +665,7 @@ exports[`Storyshots Player/Player Complete 1`] = `
           />
         </button>
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="跳至10秒後"
         >
@@ -675,10 +675,10 @@ exports[`Storyshots Player/Player Complete 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="以1倍速度播放"
         >
@@ -686,10 +686,10 @@ exports[`Storyshots Player/Player Complete 1`] = `
           x
         </button>
         <div
-          className="sc-fotOHu cBCAyI"
+          className="sc-bqiRlB iJIxst"
         >
           <button
-            className="sc-gKclnd besIqa"
+            className="sc-iqseJM iuDkSW"
             onClick={[Function]}
             title="設定睡眠"
           >
@@ -722,25 +722,25 @@ exports[`Storyshots Player/Player Default 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -755,18 +755,18 @@ exports[`Storyshots Player/Player Default 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -775,7 +775,7 @@ exports[`Storyshots Player/Player Default 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -786,13 +786,13 @@ exports[`Storyshots Player/Player Default 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -802,7 +802,7 @@ exports[`Storyshots Player/Player Default 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       />
     </div>
   </div>
@@ -827,25 +827,25 @@ exports[`Storyshots Player/Player Empty 1`] = `
     src=""
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -860,18 +860,18 @@ exports[`Storyshots Player/Player Empty 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL diZfqZ"
+    className="sc-bdvvtL hxKHED"
     disabled={true}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -880,7 +880,7 @@ exports[`Storyshots Player/Player Empty 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -891,13 +891,13 @@ exports[`Storyshots Player/Player Empty 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -907,7 +907,7 @@ exports[`Storyshots Player/Player Empty 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       />
     </div>
   </div>
@@ -932,25 +932,25 @@ exports[`Storyshots Player/Player Error 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -965,18 +965,18 @@ exports[`Storyshots Player/Player Error 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -985,7 +985,7 @@ exports[`Storyshots Player/Player Error 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -996,13 +996,13 @@ exports[`Storyshots Player/Player Error 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -1012,7 +1012,7 @@ exports[`Storyshots Player/Player Error 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       />
     </div>
   </div>
@@ -1037,25 +1037,25 @@ exports[`Storyshots Player/Player Exceed Duration 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -1070,18 +1070,18 @@ exports[`Storyshots Player/Player Exceed Duration 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -1090,7 +1090,7 @@ exports[`Storyshots Player/Player Exceed Duration 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -1101,13 +1101,13 @@ exports[`Storyshots Player/Player Exceed Duration 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -1117,7 +1117,7 @@ exports[`Storyshots Player/Player Exceed Duration 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       />
     </div>
   </div>
@@ -1142,25 +1142,25 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -1175,18 +1175,18 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -1195,7 +1195,7 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -1206,13 +1206,13 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="跳至10秒前"
         >
@@ -1221,7 +1221,7 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
           />
         </button>
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -1230,7 +1230,7 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
           />
         </button>
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="跳至10秒後"
         >
@@ -1240,7 +1240,7 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       />
     </div>
   </div>
@@ -1265,25 +1265,25 @@ exports[`Storyshots Player/Player Sleep 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -1298,18 +1298,18 @@ exports[`Storyshots Player/Player Sleep 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -1318,7 +1318,7 @@ exports[`Storyshots Player/Player Sleep 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -1329,13 +1329,13 @@ exports[`Storyshots Player/Player Sleep 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -1345,13 +1345,13 @@ exports[`Storyshots Player/Player Sleep 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       >
         <div
-          className="sc-fotOHu cBCAyI"
+          className="sc-bqiRlB iJIxst"
         >
           <button
-            className="sc-gKclnd besIqa"
+            className="sc-iqseJM iuDkSW"
             onClick={[Function]}
             title="設定睡眠"
           >
@@ -1384,25 +1384,25 @@ exports[`Storyshots Player/Player Start From 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
   >
     <div
-      className="sc-dkPtRN sc-iqseJM bFyXfZ"
+      className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
     >
       <div>
         <h5
-          className="sc-kDTinF isagFe"
+          className="sc-iCfMLu gkGzyc"
         >
           SoundHelix Song 1
         </h5>
         <h6
-          className="sc-kDTinF cXOskn"
+          className="sc-iCfMLu laNxcF"
         >
           T. Schürger
         </h6>
       </div>
       <div
-        className="sc-crHmcD eaupxe"
+        className="sc-pVTFL gVEqhm"
       >
         <img
           alt="SoundHelix Song 1"
@@ -1417,18 +1417,18 @@ exports[`Storyshots Player/Player Start From 1`] = `
     </div>
   </div>
   <div
-    className="sc-pVTFL jtkptC"
+    className="sc-bdvvtL eBpTLA"
     disabled={false}
   >
     <div
-      className="sc-jRQBWg jJVpoM"
+      className="sc-gKclnd gBnhkO"
     >
       <div
-        className="sc-gsDKAQ fNHwLb"
+        className="sc-dkPtRN kMCDZT"
         data-testid="full-box"
       >
         <input
-          className="sc-bdvvtL dOtoyv"
+          className="sc-gsDKAQ iundFe"
           onInput={[Function]}
           onMouseUp={[Function]}
           type="range"
@@ -1437,7 +1437,7 @@ exports[`Storyshots Player/Player Start From 1`] = `
         />
       </div>
       <div
-        className="sc-dkPtRN bFyXfZ"
+        className="sc-hKwDye hYYmUe"
       >
         <span>
           00:00
@@ -1448,13 +1448,13 @@ exports[`Storyshots Player/Player Start From 1`] = `
       </div>
     </div>
     <div
-      className="sc-iCfMLu iwwEzF"
+      className="sc-crHmcD hhuQRa"
     >
       <div
-        className="sc-furwcr eEHlNK"
+        className="sc-egiyK bzyXmc"
       >
         <button
-          className="sc-gKclnd besIqa"
+          className="sc-iqseJM iuDkSW"
           onClick={[Function]}
           title="播放"
         >
@@ -1464,7 +1464,7 @@ exports[`Storyshots Player/Player Start From 1`] = `
         </button>
       </div>
       <div
-        className="sc-furwcr bEikxp"
+        className="sc-egiyK hRwpvr"
       />
     </div>
   </div>
@@ -1473,14 +1473,14 @@ exports[`Storyshots Player/Player Start From 1`] = `
 
 exports[`Storyshots Player/Progress Default 1`] = `
 <div
-  className="sc-jRQBWg jJVpoM"
+  className="sc-gKclnd gBnhkO"
 >
   <div
-    className="sc-gsDKAQ fNHwLb"
+    className="sc-dkPtRN kMCDZT"
     data-testid="full-box"
   >
     <input
-      className="sc-bdvvtL dOtoyv"
+      className="sc-gsDKAQ iundFe"
       onInput={[Function]}
       onMouseUp={[Function]}
       type="range"
@@ -1493,14 +1493,14 @@ exports[`Storyshots Player/Progress Default 1`] = `
 
 exports[`Storyshots Player/Progress Original 1`] = `
 <div
-  className="sc-jRQBWg jJVpoM"
+  className="sc-gKclnd gBnhkO"
 >
   <div
-    className="sc-gsDKAQ fNHwLb"
+    className="sc-dkPtRN kMCDZT"
     data-testid="full-box"
   >
     <input
-      className="sc-bdvvtL dOtoyv"
+      className="sc-gsDKAQ iundFe"
       onInput={[Function]}
       onMouseUp={[Function]}
       type="range"
@@ -1509,7 +1509,7 @@ exports[`Storyshots Player/Progress Original 1`] = `
     />
   </div>
   <div
-    className="sc-dkPtRN bFyXfZ"
+    className="sc-hKwDye hYYmUe"
   >
     <span>
       0
@@ -1523,14 +1523,14 @@ exports[`Storyshots Player/Progress Original 1`] = `
 
 exports[`Storyshots Player/Progress Time 1`] = `
 <div
-  className="sc-jRQBWg jJVpoM"
+  className="sc-gKclnd gBnhkO"
 >
   <div
-    className="sc-gsDKAQ fNHwLb"
+    className="sc-dkPtRN kMCDZT"
     data-testid="full-box"
   >
     <input
-      className="sc-bdvvtL dOtoyv"
+      className="sc-gsDKAQ iundFe"
       onInput={[Function]}
       onMouseUp={[Function]}
       type="range"
@@ -1539,7 +1539,7 @@ exports[`Storyshots Player/Progress Time 1`] = `
     />
   </div>
   <div
-    className="sc-dkPtRN bFyXfZ"
+    className="sc-hKwDye hYYmUe"
   >
     <span>
       00:00
@@ -1553,22 +1553,22 @@ exports[`Storyshots Player/Progress Time 1`] = `
 
 exports[`Storyshots Player/TrackTitle Default 1`] = `
 <div
-  className="sc-dkPtRN sc-iqseJM bFyXfZ"
+  className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
 >
   <div>
     <h5
-      className="sc-kDTinF isagFe"
+      className="sc-iCfMLu gkGzyc"
     >
       Wedding Dress
     </h5>
     <h6
-      className="sc-kDTinF cXOskn"
+      className="sc-iCfMLu laNxcF"
     >
       Jason
     </h6>
   </div>
   <div
-    className="sc-crHmcD eaupxe"
+    className="sc-pVTFL gVEqhm"
   >
     
   </div>
@@ -1577,22 +1577,22 @@ exports[`Storyshots Player/TrackTitle Default 1`] = `
 
 exports[`Storyshots Player/TrackTitle With Image 1`] = `
 <div
-  className="sc-dkPtRN sc-iqseJM bFyXfZ"
+  className="sc-hKwDye sc-furwcr hYYmUe gPtLha"
 >
   <div>
     <h5
-      className="sc-kDTinF isagFe"
+      className="sc-iCfMLu gkGzyc"
     >
       Wedding Dress
     </h5>
     <h6
-      className="sc-kDTinF cXOskn"
+      className="sc-iCfMLu laNxcF"
     >
       Jason
     </h6>
   </div>
   <div
-    className="sc-crHmcD eaupxe"
+    className="sc-pVTFL gVEqhm"
   >
     <img
       alt="Wedding Dress"
