@@ -1,6 +1,6 @@
 import PlayerWithTheme from "./src/components/PlayerWithTheme/PlayerWithTheme";
-import tracksHook from "./src/hooks/useTracks";
-import modesHook from "./src/hooks/useModes";
+import useTracks from "./src/hooks/useTracks";
+import useModes from "./src/hooks/useModes";
 
 const renderApp = async (): Promise<void> => {
   const React = await import("react");
@@ -14,5 +14,4 @@ if (process.env.NODE_ENV === "development") {
 }
 
 export default PlayerWithTheme;
-export const useTracks = tracksHook;
-export const useModes = modesHook;
+export { useTracks, useModes };
