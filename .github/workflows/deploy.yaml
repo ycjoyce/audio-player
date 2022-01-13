@@ -19,6 +19,7 @@ jobs:
         continue-on-error: true
       - name: Build for production
         run: npm run build
+        continue-on-error: true
       - name: Deploy to GitHub page
         run: |
           cd dist
