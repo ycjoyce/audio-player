@@ -1,0 +1,20 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    name: Deploy to GitHub page
+    runs-on: ubunto-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy
+        run: |
+          npm run build
+          cd dist
+          git init
+          git add .
+          git commit -m "deploy"
+          git push -f https://github.com/ycjoyce/audio-player master:gh-pages
+          cd -
