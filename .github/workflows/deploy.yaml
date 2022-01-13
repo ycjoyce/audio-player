@@ -26,7 +26,7 @@ jobs:
           git init
           git branch -m master
           git config --global user.email "yeechiajoyce@gmail.com"
-          git config --global user.name "Joyce"
+          git config --global user.name "ycjoyce"
           git add .
           git commit -m "deploy"
           git push -f https://github.com/ycjoyce/audio-player master:gh-pages
