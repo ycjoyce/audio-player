@@ -29,5 +29,5 @@ jobs:
           git config --global user.name "ycjoyce"
           git add .
           git commit -m "deploy"
-          git push -f https://github.com/ycjoyce/audio-player master:gh-pages
+          git push -f git@github.com:ycjoyce/audio-player.git master:gh-pages
           cd -
