@@ -20,13 +20,15 @@ jobs:
       - name: Build for production
         run: npm run build
         continue-on-error: true
-      - name: Deploy to GitHub page
+      - name: Set deployment config
         run: |
           cd dist
           git init
           git branch -m master
           git config --global user.email "yeechiajoyce@gmail.com"
           git config --global user.name "ycjoyce"
+      - name: Deploy to GitHub page
+        run: |
           git add .
           git commit -m "deploy"
           git push -f git@github.com:ycjoyce/audio-player.git master:gh-pages
