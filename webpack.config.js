@@ -15,10 +15,6 @@ const commonConfig = {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: ASSET_PATH,
-    library: {
-      name: "react-player",
-      type: "umd",
-    },
   },
   resolve: {
     extensions: [".js", ".json", ".ts", ".tsx"],
@@ -65,6 +61,11 @@ const commonConfig = {
     }),
     new DotEnv(),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
 };
 
 const developmentConfig = {
@@ -80,11 +81,6 @@ const developmentConfig = {
         use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
       },
     ],
-  },
-  optimization: {
-    splitChunks: {
-      chunks: "all",
-    },
   },
 };
 
@@ -112,10 +108,6 @@ const productionConfig = {
       filename: "css/[name].css",
     }),
   ],
-  externals: {
-    react: "react",
-    "react-dom": "react-dom",
-  },
 };
 
 module.exports = (env, args) => {
