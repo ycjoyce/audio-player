@@ -33,3 +33,4 @@ jobs:
           git commit -m "deploy"
           git push -f git@github.com:ycjoyce/audio-player.git master:gh-pages
           cd -
+        continue-on-error: true
