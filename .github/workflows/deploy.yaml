@@ -38,7 +38,7 @@ jobs:
       - name: Deploy to GitHub page
         run: |
           git checkout -b gh-pages
-          git add .
+          git add --all
           git commit -m "deploy"
           git push origin gh-pages -f
           echo 🤘 deploy gh-pages complete.
