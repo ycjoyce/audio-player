@@ -20,7 +20,7 @@ const connect = (url = "", type = "GET", data = {}): Promise<any> => {
   const config: { baseURL: string; headers: Header } = {
     baseURL,
     headers: {
-      apikey: process.env.apikey || "",
+      apikey: process.env.API_KEY || "",
       "Content-Type": "application/json",
     },
   };

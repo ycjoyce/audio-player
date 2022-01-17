@@ -5,6 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { merge } = require("webpack-merge");
 const DotEnv = require("dotenv-webpack");
 
+const ASSET_PATH = process.env.ASSET_PATH || "/";
+
 const commonConfig = {
   entry: {
     main: "./index.tsx",
@@ -12,6 +14,7 @@ const commonConfig = {
   output: {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: ASSET_PATH,
     library: {
       name: "react-player",
       type: "umd",
