@@ -6,6 +6,11 @@ on:
 jobs:
   deploy:
     name: Deploy to GitHub page
+    env:
+      MY_SECRET: ${{secrets.TOKEN}}
+      USER_NAME: ycjoyce
+      USER_EMAIL: yeechiajoyce@gmail.com
+      PUBLISH_DIR: ./dist
     strategy:
       matrix:
         os: [ubuntu-latest]
@@ -14,23 +19,27 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v2
+      - name: Use Node.js ${{matrix.node_version}}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{matrix.node_version}}
       - name: Install Dependencies
         run: npm install
-        continue-on-error: true
       - name: Build for production
         run: npm run build
-        continue-on-error: true
       - name: Set deployment config
         run: |
-          cd dist
+          cd $PUBLISH_DIR
           git init
-          git branch -m master
-          git config --global user.email "yeechiajoyce@gmail.com"
-          git config --global user.name "ycjoyce"
+          git config --global user.email $USER_EMAIL
+          git config --global user.name $USER_NAME
+          git status
+          git remote add origin git@github.com:ycjoyce/audio-player.git
       - name: Deploy to GitHub page
         run: |
+          git checkout -b gh-pages
           git add .
           git commit -m "deploy"
-          git push -f git@github.com:ycjoyce/audio-player.git master:gh-pages
+          git push origin gh-pages -f
+          echo 🤘 deploy gh-pages complete.
           cd -
-        continue-on-error: true
