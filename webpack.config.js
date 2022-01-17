@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { merge } = require("webpack-merge");
 const DotEnv = require("dotenv-webpack");
 
-const ASSET_PATH = process.env.ASSET_PATH || "/";
+const ASSET_PATH = "/audio-player/";
 
 const commonConfig = {
   entry: {
