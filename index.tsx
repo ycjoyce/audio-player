@@ -9,9 +9,7 @@ const renderApp = async (): Promise<void> => {
   render(<App />, document.querySelector("#root"));
 };
 
-if (process.env.NODE_ENV === "development") {
-  renderApp();
-}
+renderApp();
 
 export default PlayerWithTheme;
 export { useTracks, useModes };
