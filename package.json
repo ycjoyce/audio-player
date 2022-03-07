@@ -1,5 +1,5 @@
 {
-  "name": "react-player",
+  "name": "audio-player",
   "version": "1.0.0",
   "description": "An audio player based on React",
   "main": "dist/js/main.bundle.js",
