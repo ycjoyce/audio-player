@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import { device } from "../../styled-components/abstract/breakpoint";
 import spacing from "../../styled-components/abstract/spacing";
 import fontSizes from "../../styled-components/abstract/font";
-import { ThemeColors } from "../../styled-components/abstract/theme";
 
 import Button from "../../styled-components/components/Button";
 
@@ -26,7 +25,7 @@ const StyledPlayerButtonGroup = styled.div`
   }
 
   ${Button} {
-    color: ${({ theme }) => theme[ThemeColors.dark]};
+    color: #fff;
     padding: ${spacing[1]}em;
   }
 `;

@@ -21,3 +21,44 @@ export const StyledPlayerSection = styled.div<{ disabled?: boolean }>`
       }
     `}
 `;
+
+export const StyledPlayerBackground = styled.div<{ img?: string }>`
+  ${({ img }) => {
+    if (img) {
+      return css`
+        background-image: url(${img});
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        filter: blur(50px);
+        -webkit-filter: blur(50px);
+      `;
+    }
+    return "";
+  }}
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+export const StyledPlayerBox = styled.div`
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  max-width: 90%;
+`;
+
+const StyledPlayer = styled.div`
+  position: relative;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+`;
+
+export default StyledPlayer;

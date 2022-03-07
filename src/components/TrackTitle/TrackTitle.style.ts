@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 import spacing from "../../styled-components/abstract/spacing";
-import { device } from "../../styled-components/abstract/breakpoint";
-import { ThemeColors } from "../../styled-components/abstract/theme";
 
 import { FlexBox } from "../../styled-components/components/Box";
 
@@ -11,15 +9,14 @@ const StyledTrackTitle = styled(FlexBox)`
   flex-direction: column-reverse;
   align-items: center;
   text-align: center;
+  margin-bottom: ${spacing[3]}em;
 
-  @media all and ${device.sm} {
-    flex-direction: row;
-    align-items: start;
-    text-align: unset;
+  h5 {
+    margin-bottom: 5px;
   }
 
   h6 {
-    color: ${({ theme }) => theme[ThemeColors.secondary]};
+    font-weight: normal;
   }
 `;
 
@@ -28,12 +25,7 @@ export const StyledTrackImgBox = styled.div`
   flex: 0 0 30%;
   max-width: 200px;
   min-width: 100px;
-  margin-bottom: ${spacing[2]}em;
-
-  @media all and ${device.sm} {
-    margin-left: ${spacing[2]}em;
-    margin-bottom: 0;
-  }
+  margin-bottom: ${spacing[3]}em;
 `;
 
 export default StyledTrackTitle;

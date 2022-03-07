@@ -12,15 +12,11 @@ const commonConfig = {
   output: {
     filename: "js/[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    library: {
-      name: "react-player",
-      type: "umd",
-    },
   },
   resolve: {
     extensions: [".js", ".json", ".ts", ".tsx"],
     alias: {
-      "@img": path.resolve(__dirname, "./images"),
+      "@img": path.resolve(__dirname, "./src/images"),
     },
   },
   module: {
@@ -109,10 +105,6 @@ const productionConfig = {
       filename: "css/[name].css",
     }),
   ],
-  externals: {
-    react: "react",
-    "react-dom": "react-dom",
-  },
 };
 
 module.exports = (env, args) => {

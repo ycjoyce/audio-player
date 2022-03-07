@@ -1,5 +1,6 @@
 import React, { FC, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
+import "normalize.css";
 
 import useTracks from "../../hooks/useTracks";
 import useLoading from "../../hooks/useLoading";
@@ -8,8 +9,8 @@ import { Directions } from "../../models";
 import Player, { audioSrcType } from "../Player/Player";
 import theme from "../../styled-components/abstract/theme";
 import GlobalStyle from "../../styled-components/components/Global";
+import "../../style/index.scss";
 
-import { StyledPlayerBox } from "./App.style";
 import Button from "../../styled-components/components/Button";
 import Loading from "../Loading/Loading";
 
@@ -115,7 +116,7 @@ const App: FC = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
 
-      <StyledPlayerBox>
+      <div>
         {loading && <Loading />}
 
         {tracks.length > 0 && (
@@ -142,7 +143,7 @@ const App: FC = () => {
             }}
           />
         )}
-      </StyledPlayerBox>
+      </div>
     </ThemeProvider>
   );
 };

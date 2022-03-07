@@ -69,7 +69,6 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4",
     "@storybook/addon-storyshots": "^6.4.9",
     "@storybook/react": "^6.4.9",
     "@testing-library/jest-dom": "^5.15.0",

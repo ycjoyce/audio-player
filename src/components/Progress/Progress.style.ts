@@ -3,7 +3,7 @@ import styled from "styled-components";
 import fontSizes from "../../styled-components/abstract/font";
 import spacing from "../../styled-components/abstract/spacing";
 
-import { FullWidthBox } from "../../styled-components/components/Box";
+import { FlexBox, FullWidthBox } from "../../styled-components/components/Box";
 
 /** 進度條樣式 */
 export const StyledProgressGroup = styled.div`
@@ -11,6 +11,10 @@ export const StyledProgressGroup = styled.div`
   margin-bottom: ${spacing[3]}em;
 
   ${FullWidthBox} {
-    margin-bottom: ${spacing[3]}em;
+    margin: 0 20px;
+  }
+
+  ${FlexBox} {
+    align-items: center;
   }
 `;
