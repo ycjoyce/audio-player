@@ -121,14 +121,6 @@ const Progress: FC<ProgressProps> = ({
 
   return (
     <StyledProgressGroup>
-      <FullWidthBox>
-        <InputRange
-          value={Number.isNaN(inputValue) ? 0 : inputValue}
-          onInput={handleInput}
-          onMouseUp={handleMouseUp}
-        />
-      </FullWidthBox>
-
       {text && (
         <FlexBox justifyContent="space-between">
           <span>
@@ -136,6 +128,14 @@ const Progress: FC<ProgressProps> = ({
               ? formatTime(convertedCurrentPosition)
               : convertedCurrentPosition}
           </span>
+          <FullWidthBox>
+            <InputRange
+              width="100%"
+              value={Number.isNaN(inputValue) ? 0 : inputValue}
+              onInput={handleInput}
+              onMouseUp={handleMouseUp}
+            />
+          </FullWidthBox>
           <span>
             {text === TextFormats.time
               ? formatTime(convertedTotalLength)

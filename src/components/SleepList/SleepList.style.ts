@@ -15,5 +15,6 @@ export const StyledSleepList = styled(List)`
   border: 1px solid ${({ theme }) => theme[ThemeColors.secondary]};
   font-size: ${fontSizes.small}em;
   text-align: center;
-  background-color: ${({ theme }) => theme[ThemeColors.white]};
+  background-color: #fff;
+  color: ${({ theme }) => theme[ThemeColors.dark]};
 `;

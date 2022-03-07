@@ -5,21 +5,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { merge } = require("webpack-merge");
 const DotEnv = require("dotenv-webpack");
 
-const ASSET_PATH = "/audio-player/";
-
 const commonConfig = {
   entry: {
     main: "./index.tsx",
   },
-  output: {
-    filename: "js/[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    publicPath: ASSET_PATH,
-  },
   resolve: {
     extensions: [".js", ".json", ".ts", ".tsx"],
     alias: {
-      "@img": path.resolve(__dirname, "./images"),
+      "@img": path.resolve(__dirname, "./src/images"),
     },
   },
   module: {
@@ -70,6 +63,10 @@ const commonConfig = {
 
 const developmentConfig = {
   devtool: "source-map",
+  output: {
+    filename: "js/[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+  },
   devServer: {
     port: 5000,
     open: true,
@@ -85,6 +82,11 @@ const developmentConfig = {
 };
 
 const productionConfig = {
+  output: {
+    filename: "js/[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/audio-player/",
+  },
   module: {
     rules: [
       {

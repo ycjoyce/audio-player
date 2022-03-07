@@ -8,16 +8,23 @@ jobs:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Install and Build 🔧
+      - name: Install
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+      - name: Create env file
         run: |
-          npm install
-          npm run build
-
-      - name: Deploy 🚀
+          touch .env
+          echo API_KEY=${{ secrets.NAPSTER_API_KEY }} >> .env
+          cat .env
+      - name: Build
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
           branch: gh-pages
-          folder: dist
+          folder: build

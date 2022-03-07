@@ -16,10 +16,6 @@ describe("Progress", () => {
       />
     );
 
-    const input = screen.getByRole("slider");
-    expect(input).toBeInTheDocument();
-    expect(input).toHaveValue(`${currentPosition}`);
-
     expect(screen.queryByText(`${currentPosition}`)).not.toBeInTheDocument();
     expect(screen.queryByText(`${totalLength}`)).not.toBeInTheDocument();
 

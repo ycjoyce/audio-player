@@ -6,6 +6,8 @@ import { ShadowBox } from "../../styled-components/components/Box";
 export const StyledPlayerBox = styled(ShadowBox)`
   width: 800px;
   max-width: 90%;
-  margin: 0 auto;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;

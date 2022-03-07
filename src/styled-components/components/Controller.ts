@@ -23,7 +23,7 @@ export const InputRange = styled.input.attrs(({ width = 200, theme }) => ({
   theme,
 }))`
   -webkit-appearance: none;
-  width: ${({ width }) => width}px;
+  width: 100%;
   height: 10px;
   background: none;
   outline: none;
@@ -32,7 +32,7 @@ export const InputRange = styled.input.attrs(({ width = 200, theme }) => ({
   cursor: pointer;
 
   &::-webkit-slider-runnable-track {
-    background-color: ${({ theme }) => theme[ThemeColors.light]};
+    background-color: rgba(255, 255, 255, 0.3);
     height: 5px;
     border-radius: 5px;
   }
@@ -45,8 +45,7 @@ export const InputRange = styled.input.attrs(({ width = 200, theme }) => ({
     height: 10px;
     background: ${({ theme }) => theme[ThemeColors.white]};
     border-radius: 100%;
-    border: 1px solid ${({ theme }) => theme[ThemeColors.primary]};
-    box-shadow: ${({ width, theme }) =>
-      getProgress(width as number, theme[ThemeColors.primary])};
+    border: 1px solid ${({ theme }) => theme[ThemeColors.light]};
+    box-shadow: ${({ width }) => getProgress(width as number, "#fff")};
   }
 `;

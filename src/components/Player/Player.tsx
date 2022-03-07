@@ -13,7 +13,11 @@ import useLoading from "../../hooks/useLoading";
 import { Directions } from "../../models";
 import { sleepOption } from "../SleepGroup/SleepGroup";
 
-import { StyledPlayerSection } from "./Player.style";
+import StyledPlayer, {
+  StyledPlayerSection,
+  StyledPlayerBackground,
+  StyledPlayerBox,
+} from "./Player.style";
 import Progress, { TextFormats } from "../Progress/Progress";
 import TrackTitle from "../TrackTitle/TrackTitle";
 import Loading from "../Loading/Loading";
@@ -279,7 +283,7 @@ const Player: FC<PlayerProps> = ({
       return <Empty />;
     }
     return (
-      <>
+      <StyledPlayerBox>
         <StyledPlayerSection>
           <TrackTitle name={name} artist={artist} img={img} />
         </StyledPlayerSection>
@@ -301,7 +305,7 @@ const Player: FC<PlayerProps> = ({
             handleSongChange={handleSongChange}
           />
         </StyledPlayerSection>
-      </>
+      </StyledPlayerBox>
     );
   };
 
@@ -324,7 +328,9 @@ const Player: FC<PlayerProps> = ({
   }, [url]);
 
   return (
-    <div data-testid="player">
+    <StyledPlayer data-testid="player">
+      <StyledPlayerBackground img={img} />
+
       {loading && <Loading />}
 
       <audio
@@ -347,7 +353,7 @@ const Player: FC<PlayerProps> = ({
       />
 
       {renderContent(audioRef.current, error, empty)}
-    </div>
+    </StyledPlayer>
   );
 };
 
