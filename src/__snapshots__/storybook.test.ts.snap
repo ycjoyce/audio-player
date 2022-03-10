@@ -197,11 +197,11 @@ exports[`Storyshots Player/Loading Default 1`] = `
 
 exports[`Storyshots Player/Player Autoplay 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={true}
@@ -310,11 +310,11 @@ exports[`Storyshots Player/Player Autoplay 1`] = `
 
 exports[`Storyshots Player/Player Change Rates 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
@@ -432,11 +432,11 @@ exports[`Storyshots Player/Player Change Rates 1`] = `
 
 exports[`Storyshots Player/Player Change Song 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
@@ -563,11 +563,11 @@ exports[`Storyshots Player/Player Change Song 1`] = `
 
 exports[`Storyshots Player/Player Complete 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
@@ -734,11 +734,11 @@ exports[`Storyshots Player/Player Complete 1`] = `
 
 exports[`Storyshots Player/Player Default 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
@@ -847,11 +847,11 @@ exports[`Storyshots Player/Player Default 1`] = `
 
 exports[`Storyshots Player/Player Empty 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
@@ -960,11 +960,11 @@ exports[`Storyshots Player/Player Empty 1`] = `
 
 exports[`Storyshots Player/Player Error 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
@@ -1073,11 +1073,11 @@ exports[`Storyshots Player/Player Error 1`] = `
 
 exports[`Storyshots Player/Player Exceed Duration 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
@@ -1186,11 +1186,11 @@ exports[`Storyshots Player/Player Exceed Duration 1`] = `
 
 exports[`Storyshots Player/Player Jump Gap 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
@@ -1317,11 +1317,11 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
 
 exports[`Storyshots Player/Player Sleep 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
@@ -1444,11 +1444,11 @@ exports[`Storyshots Player/Player Sleep 1`] = `
 
 exports[`Storyshots Player/Player Start From 1`] = `
 <div
-  className="sc-hKwDye irZSIa"
+  className="sc-hKwDye gHjfVw"
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ bZjkwk"
+    className="sc-gsDKAQ jXFMTL"
   />
   <audio
     autoPlay={false}
