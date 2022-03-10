@@ -30,15 +30,14 @@ export const StyledPlayerBackground = styled.div<{ img?: string }>`
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        filter: blur(50px);
-        -webkit-filter: blur(50px);
+        /*filter: blur(50px);
+        -webkit-filter: blur(50px);*/
       `;
     }
     return css`
       background-color: #000;
     `;
   }}
-  border: 1px solid red;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -54,6 +53,7 @@ export const StyledPlayerBox = styled.div`
   transform: translate(-50%, -50%);
   width: 800px;
   max-width: 90%;
+  border: 1px solid red;
 `;
 
 const StyledPlayer = styled.div`
