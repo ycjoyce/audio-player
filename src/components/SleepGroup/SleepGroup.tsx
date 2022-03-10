@@ -1,11 +1,12 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { FC, useState, useEffect, useRef } from "react";
 
 import usePrevious from "../../hooks/usePrevious";
-import useClickOutside from "../../hooks/useClickOutside";
 
 import { StyledSleepGroup } from "./SleepGroup.style";
 import Button from "../../styled-components/components/Button";
 import SleepList from "../SleepList/SleepList";
+import { StyledBackground } from "../SleepList/SleepList.style";
 
 /** 睡眠模式選項 */
 export type sleepOption = {
@@ -68,23 +69,25 @@ const SleepGroup: FC<SleepGroupProps> = ({
     }
   }, [updated, options]);
 
-  // 每當點擊外部，關閉睡眠模式列表
-  useClickOutside(sleepGroupRef, () => setShowList(false));
-
   return (
-    <StyledSleepGroup ref={sleepGroupRef}>
-      <Button title="設定睡眠" onClick={toggleShowList}>
-        {children || "設定睡眠"}
-      </Button>
+    <>
+      <StyledSleepGroup ref={sleepGroupRef}>
+        <Button title="設定睡眠" onClick={toggleShowList}>
+          {children || "設定睡眠"}
+        </Button>
 
-      {showList && (
-        <SleepList
-          options={options}
-          checkedOption={checkedOption}
-          setCheckedOption={setCheckedOption}
-        />
-      )}
-    </StyledSleepGroup>
+        {showList && (
+          <>
+            <SleepList
+              options={options}
+              checkedOption={checkedOption}
+              setCheckedOption={setCheckedOption}
+            />
+            <StyledBackground onClick={() => setShowList(false)} />
+          </>
+        )}
+      </StyledSleepGroup>
+    </>
   );
 };
 

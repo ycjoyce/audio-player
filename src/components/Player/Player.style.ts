@@ -46,7 +46,6 @@ export const StyledPlayerBox = styled.div`
   transform: translate(-50%, -50%);
   width: 800px;
   max-width: 90%;
-  border: 1px solid yellow;
 `;
 
 const StyledPlayer = styled.div`

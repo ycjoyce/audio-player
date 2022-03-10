@@ -161,7 +161,7 @@ exports[`Storyshots Player/Buttons/SleepGroup Default 1`] = `
 
 exports[`Storyshots Player/Buttons/SleepGroup/SleepList Default 1`] = `
 <ul
-  className="sc-fFeiMQ sc-ieecCq fUMsLW crZZQF"
+  className="sc-fFeiMQ sc-ieecCq fUMsLW fTCvTB"
   onClick={[Function]}
 >
   <li
@@ -222,7 +222,7 @@ exports[`Storyshots Player/Player Autoplay 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -340,7 +340,7 @@ exports[`Storyshots Player/Player Change Rates 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -467,7 +467,7 @@ exports[`Storyshots Player/Player Change Song 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -603,7 +603,7 @@ exports[`Storyshots Player/Player Complete 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -779,7 +779,7 @@ exports[`Storyshots Player/Player Default 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -897,7 +897,7 @@ exports[`Storyshots Player/Player Empty 1`] = `
     src=""
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -1015,7 +1015,7 @@ exports[`Storyshots Player/Player Error 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -1133,7 +1133,7 @@ exports[`Storyshots Player/Player Exceed Duration 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -1251,7 +1251,7 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -1387,7 +1387,7 @@ exports[`Storyshots Player/Player Sleep 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -1519,7 +1519,7 @@ exports[`Storyshots Player/Player Start From 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN gFqZFW"
+    className="sc-dkPtRN jsAjRF"
   >
     <div
       className="sc-bdvvtL eBpTLA"

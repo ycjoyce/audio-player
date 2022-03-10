@@ -1,4 +1,4 @@
-import React, { FC, Dispatch, SetStateAction, MouseEvent } from "react";
+import React, { Dispatch, SetStateAction, MouseEvent, forwardRef } from "react";
 
 import { sleepOption } from "../SleepGroup/SleepGroup";
 
@@ -19,39 +19,39 @@ export interface SleepListProps {
  * @param param0
  * @returns
  */
-const SleepList: FC<SleepListProps> = ({
-  options,
-  checkedOption,
-  setCheckedOption,
-}) => {
-  /**
-   * 處理選項的點擊事件
-   * @param e
-   */
-  const handleItemClick = (e: MouseEvent): void => {
-    const { target } = e;
-    if (!(target instanceof HTMLLIElement)) {
-      return;
-    }
-    if (target.dataset && target.dataset.minutes) {
-      setCheckedOption(+target.dataset.minutes);
-    }
-  };
+const SleepList = forwardRef<HTMLUListElement, SleepListProps>(
+  ({ options, checkedOption, setCheckedOption }, ref) => {
+    /**
+     * 處理選項的點擊事件
+     * @param e
+     */
+    const handleItemClick = (e: MouseEvent): void => {
+      const { target } = e;
+      if (!(target instanceof HTMLLIElement)) {
+        return;
+      }
+      if (target.dataset && target.dataset.minutes) {
+        setCheckedOption(+target.dataset.minutes);
+      }
+    };
 
-  return (
-    <StyledSleepList onClick={handleItemClick}>
-      {options.map(({ text, minutes }) => (
-        <ListItem
-          key={text}
-          data-minutes={minutes}
-          clickable
-          className={`${minutes === checkedOption ? "active" : ""}`}
-        >
-          {text}
-        </ListItem>
-      ))}
-    </StyledSleepList>
-  );
-};
+    return (
+      <StyledSleepList ref={ref} onClick={handleItemClick}>
+        {options.map(({ text, minutes }) => (
+          <ListItem
+            key={text}
+            data-minutes={minutes}
+            clickable
+            className={`${minutes === checkedOption ? "active" : ""}`}
+          >
+            {text}
+          </ListItem>
+        ))}
+      </StyledSleepList>
+    );
+  }
+);
+
+SleepList.displayName = "SleepList";
 
 export default SleepList;
