@@ -21,6 +21,11 @@ import Loading from "../Loading/Loading";
 const App: FC = () => {
   const { loading, setLoading } = useLoading();
 
+  useEffect(() => {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }, []);
+
   /** 曲目列表、播放模式列表 */
   const {
     autoPlay,

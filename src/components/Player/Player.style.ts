@@ -29,12 +29,14 @@ export const StyledPlayerBackground = styled.div<{ img?: string }>`
         background-image: url(${img});
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
+        background-position: center center;
         filter: blur(50px);
         -webkit-filter: blur(50px);
       `;
     }
-    return "";
+    return css`
+      background-color: #000;
+    `;
   }}
   border: 1px solid red;
   width: 100%;
@@ -59,6 +61,7 @@ const StyledPlayer = styled.div`
   color: #fff;
   width: 100vw;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 `;
 
 export default StyledPlayer;
