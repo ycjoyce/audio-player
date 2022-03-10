@@ -201,7 +201,7 @@ exports[`Storyshots Player/Player Autoplay 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -222,7 +222,7 @@ exports[`Storyshots Player/Player Autoplay 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -319,7 +319,7 @@ exports[`Storyshots Player/Player Change Rates 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -340,7 +340,7 @@ exports[`Storyshots Player/Player Change Rates 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -446,7 +446,7 @@ exports[`Storyshots Player/Player Change Song 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -467,7 +467,7 @@ exports[`Storyshots Player/Player Change Song 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -582,7 +582,7 @@ exports[`Storyshots Player/Player Complete 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -603,7 +603,7 @@ exports[`Storyshots Player/Player Complete 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -758,7 +758,7 @@ exports[`Storyshots Player/Player Default 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -779,7 +779,7 @@ exports[`Storyshots Player/Player Default 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -876,7 +876,7 @@ exports[`Storyshots Player/Player Empty 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -897,7 +897,7 @@ exports[`Storyshots Player/Player Empty 1`] = `
     src=""
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -994,7 +994,7 @@ exports[`Storyshots Player/Player Error 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -1015,7 +1015,7 @@ exports[`Storyshots Player/Player Error 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -1112,7 +1112,7 @@ exports[`Storyshots Player/Player Exceed Duration 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -1133,7 +1133,7 @@ exports[`Storyshots Player/Player Exceed Duration 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -1230,7 +1230,7 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -1251,7 +1251,7 @@ exports[`Storyshots Player/Player Jump Gap 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -1366,7 +1366,7 @@ exports[`Storyshots Player/Player Sleep 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -1387,7 +1387,7 @@ exports[`Storyshots Player/Player Sleep 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"
@@ -1498,7 +1498,7 @@ exports[`Storyshots Player/Player Start From 1`] = `
   data-testid="player"
 >
   <div
-    className="sc-gsDKAQ dNgMWH"
+    className="sc-gsDKAQ bKgnni"
   >
     <img
       alt=""
@@ -1519,7 +1519,7 @@ exports[`Storyshots Player/Player Start From 1`] = `
     src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   />
   <div
-    className="sc-dkPtRN jsAjRF"
+    className="sc-dkPtRN gFqZFW"
   >
     <div
       className="sc-bdvvtL eBpTLA"

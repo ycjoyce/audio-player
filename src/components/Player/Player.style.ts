@@ -34,7 +34,7 @@ export const StyledPlayerBackground = styled.div`
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    filter: blur(50px);
+    filter: blur(8px);
   }
 `;
 
@@ -46,6 +46,7 @@ export const StyledPlayerBox = styled.div`
   transform: translate(-50%, -50%);
   width: 800px;
   max-width: 90%;
+  border: 1px solid yellow;
 `;
 
 const StyledPlayer = styled.div`
