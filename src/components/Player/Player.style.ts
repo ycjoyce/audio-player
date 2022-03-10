@@ -22,27 +22,20 @@ export const StyledPlayerSection = styled.div<{ disabled?: boolean }>`
     `}
 `;
 
-export const StyledPlayerBackground = styled.div<{ img?: string }>`
-  ${({ img }) => {
-    if (img) {
-      return css`
-        background-image: url(${img});
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        /*filter: blur(50px);
-        -webkit-filter: blur(50px);*/
-      `;
-    }
-    return css`
-      background-color: #000;
-    `;
-  }}
+export const StyledPlayerBackground = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    filter: blur(50px);
+  }
 `;
 
 export const StyledPlayerBox = styled.div`
@@ -53,7 +46,6 @@ export const StyledPlayerBox = styled.div`
   transform: translate(-50%, -50%);
   width: 800px;
   max-width: 90%;
-  border: 1px solid red;
 `;
 
 const StyledPlayer = styled.div`

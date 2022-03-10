@@ -329,7 +329,9 @@ const Player: FC<PlayerProps> = ({
 
   return (
     <StyledPlayer data-testid="player">
-      <StyledPlayerBackground img={img} />
+      <StyledPlayerBackground>
+        <img src={img} alt="" />
+      </StyledPlayerBackground>
 
       {loading && <Loading />}
 
